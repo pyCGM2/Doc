@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "example"
+baseURL = "https://pycgm2.netlify.app"
 title = "Hugo documentation theme"
 theme = "godocs-hugo"
 # disable language
@@ -106,7 +106,7 @@ enable = true
 label = "contact"
 link = "contact"
 
-  
+
 ############################# social site ########################
 [[params.social]]
 title = "facebook"
