@@ -57,7 +57,7 @@ link = "plugins/search/search-page.js"
 # main menu
 [[menu.main]]
 name = "Github"
-url = "https://github.com/themefisher/godocs"
+url = "https://github.com/pyCGM2/pyCGM2"
 weight = 1
 
 
@@ -74,7 +74,7 @@ weight = 2
 
 [[menu.footer]]
 name = "Github"
-url = "https://github.com/themefisher/godocs"
+url = "https://github.com/pyCGM2/pyCGM2"
 weight = 3
 
 
@@ -82,8 +82,8 @@ weight = 3
 [params]
 logo = "images/pyCGM2-logo2.png"
 # Meta data
-description = "This is meta description"
-author = "Themefisher"
+description = ""
+author = "Fabien Leboeuf"
 # contact form action
 contact_form_action = "#" # contact form works with https://formspree.io
 # Google Analitycs

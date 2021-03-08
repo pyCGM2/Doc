@@ -15,5 +15,9 @@ It starts with the CGM1.0 : the Vicon Plugin gait Clone then adresses each of it
   - [CGM1.0]({{< relref "CGM1.0" >}}) : the Vicon Plugin gait model
   - [CGM1.1](CGM1.1) : the Vicon Plugin gait model as it should work
 - CGM2
-  - [CGM2.1](../CGM1.0) : the Vicon Plugin gait model
-  - [CGM2.2](../CGM1.1) : the Vicon Plugin gait model as it should work
+  - [CGM2.1](../CGM2.1) : Hip joint centre alteration
+  - [CGM2.2](../CGM2.2) : Inverse Kinematics as segmental pose algorithm
+  - [CGM2.3](../CGM2.3) : wand marker removal
+  - [CGM2.4](../CGM2.4) : a two segment foot models
+  - [CGM2.5](../CGM2.5) : upper limb model updated
+  - [CGM2.6](../CGM2.6) : functional knee calibration
