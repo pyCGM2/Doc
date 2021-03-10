@@ -60,6 +60,11 @@ name = "Github"
 url = "https://github.com/pyCGM2/pyCGM2"
 weight = 1
 
+[[menu.main]]
+name = "Team"
+url = "team"
+weight = 2
+
 
 # footer menu
 [[menu.footer]]
@@ -72,10 +77,6 @@ name = "contact"
 url = "contact"
 weight = 2
 
-[[menu.footer]]
-name = "Github"
-url = "https://github.com/pyCGM2/pyCGM2"
-weight = 3
 
 
 #################### default parameters ################################
@@ -85,7 +86,7 @@ logo = "images/pyCGM2-logo2.png"
 description = ""
 author = "Fabien Leboeuf"
 # contact form action
-contact_form_action = "#" # contact form works with https://formspree.io
+contact_form_action = "https://formspree.io/f/xoqpgvzl" # contact form works with https://formspree.io
 # Google Analitycs
 google_analitycs_id = "" # your id
 
@@ -162,7 +163,10 @@ languageCode = "en-us"
 weight = 1
 home = "Home"
 # copyright
-copyright = "Copyright &copy; 2020 a hugo theme by [themefisher](https://themefisher.com)"
+copyright = "CC-BY - Content licensed under a Creative Commons Attribution 4.0 International License, except where indicated otherwise."
+cc_image = "images/by.jpg"
+
+
 
 # banner
 [Languages.en.banner]
