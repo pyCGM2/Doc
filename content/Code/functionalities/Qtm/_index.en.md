@@ -9,10 +9,8 @@ weight: 4
 
 QTM-based pycgm2 workflows gather in a single **workflow** both  calibration and fitting operations.
 
+
 QTM-based pycgm2 workflow are located in *PATHTO\\Miniconda3\\envs\\pycgm3\\Scripts* and named `QTM_CGM#i#_workflow.exe` ( replace *#i"* by the CGM version number) ( e.g `QTM_CGM1_workflow.exe` is the workflow for the CGM1)   
 
-
-The file `session.xml` generated from QTM:
-
-* overwrites the internal `#-pycgm2.settings` file.
-* is used as the sole input argument of the workflow script.
+`QTM_CGM#i#_workflow.exe` scripts require the `session.xml` file. You need thus to generate this file before running any script.
+The role of `session.xml` is to overloaded the  internal `#-pycgm2.settings` file     

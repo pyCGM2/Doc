@@ -28,5 +28,32 @@ The installation  :
 
 * generates **scripts** into the virtual environment ( here pycgm3) folder *PATHTO\\Miniconda3\\envs\\pycgm3\\Scripts*)
 * creates a folder *C:\\programData\\pycgm2* and gathers in **settings**
-* detects your Vicon Nexus version and populates *C:\\Users\\Public\\Documents\\Vicon\\Nexus2.x*
+
+
+#### For Vicon Nexus Users
+
+The installation detects your Vicon Nexus version and populates *C:\\Users\\Public\\Documents\\Vicon\\Nexus2.x*
 with pre-defined nexus pipelines and nexus skeleton (vst files)
+
+{{< notice "info" >}}
+if you want to use pre-defined nexus pipelines instead of the miniconda console, you need to **add your virtual environment to your window path**
+{{< /notice >}}
+
+
+#### For QTM Users
+
+**Requirements**
+
+* Download the [CGM2-QTM project sample](https://github.com/pyCGM2/qualisys_CGM2_workflow)
+  - unzip it and copy-paste in an appropriate folder
+
+* Download [Mokka](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/b-tk/Mokka-0.6.2_win64.zip):
+  - Unzip Mokka and **add location of Mokka.exe to "Path" environment variable.**
+
+
+
+<!-- For an external use of the pyCGM2 package, you need to point the QTM project option to your virtual environment.
+
+Go to *Tools/project options* and amend the python line of the external programs box, as illustrated :   
+
+![image](qtmProjectOptions.png) -->
