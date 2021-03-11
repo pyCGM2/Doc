@@ -5,7 +5,7 @@ icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: "miscellaneous resources ( Gait analysis, programming...)"
 # type dont remove or customize
 type : "docs"
-weight: 5
+weight: 6
 ---
 
 ### Palpation
