@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div class="p-5 shadow rounded content">
-          <h2 class="section-title">{{ .Title }}</h2>         
+          <h2 class="section-title">{{ .Title }}</h2>
           <form method="POST" action="{{ .Site.Params.contact_form_action }}">
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -27,9 +27,12 @@
               <label for="reason">{{ i18n "contact_reason" }}</label>
               <select id="reason" class="form-control custom-select" name="reason" required>
                 <option selected disabled>Choose Your Reason</option>
-                <option value="business">Business</option>
-                <option value="ticket">Ticket</option>
                 <option value="project">Project</option>
+                <option value="shareCode">Share Code</option>
+                <option value="shareData">Share Data</option>
+                <option value="caseStudy">Case study</option>
+                <option value="consultancy">Consultancy</option>
+                <option value="info">other</option>
               </select>
             </div>
             <div class="form-group">
