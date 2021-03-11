@@ -17,3 +17,15 @@ We hope other people will want to use our CGM and would like to invite you to wo
   - **Share code** If you implemented a program that would be worth to share with the community. We would be happy to include it into pyCGM2. We invite you to send us your code and a brief description so we inform readers. As an example, we shared the [Kalman filter-based gap filling method](https://doi.org/10.1016/j.jbiomech.2016.04.016) developped by Mickael Burke  
 
   - **Propose a case study** we'd love to present pathological applications of our gait model. If you processed your data with our model and obtained interesting clinical interpretation, feel free to contact us.
+
+<hr>
+
+
+### Want to contribute to the website
+
+That is simple:
+* open a text editor
+* type you text with [the markdown syntax](https://www.markdownguide.org/basic-syntax/)
+* send us your markdown files  
+
+see [next section]({{< relref "websiteContribution" >}}) to see an example of a markdown page
