@@ -1,6 +1,7 @@
 {{ "<!-- details page -->" | safeHTML }}
 <section class="pt-5">
-  <div class="container shadow section-sm rounded">
+
+  <div class="container-fluid">
     <div class="row">
       <div class="col-lg-3 col-md-4 d-none d-md-block">
         <ul class="sidenav">
@@ -16,7 +17,7 @@
           {{ end }}
         </ul>
       </div>
-      <div class="col-md-8">
+      <div class="col-lg-7 col-md-8">
         <div class="px-lg-5 px-4">
           <h2 class="mb-4 font-weight-medium">{{ .Title }}</h2>
           {{ if .Content }}
@@ -64,6 +65,11 @@
           </nav>
         </div>
       </div>
+      {{ if .Site.Params.table_of_content }}
+      <div class="col-lg-2 d-none d-lg-block">
+        {{ .TableOfContents }}
+      </div>
+      {{ end }}
     </div>
   </div>
 </section>

@@ -89,6 +89,7 @@ author = "Fabien Leboeuf"
 contact_form_action = "https://formspree.io/f/xoqpgvzl" # contact form works with https://formspree.io
 # Google Analitycs
 google_analitycs_id = "" # your id
+table_of_content = true
 
 # Preloader
 [params.preloader]
@@ -216,3 +217,9 @@ content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br
   enable = "true"
   label = "Contactez Nous"
   link = "contact"
+
+# table of content
+[markup.tableOfContents]
+startLevel = 0
+endLevel = 6
+ordered = false
