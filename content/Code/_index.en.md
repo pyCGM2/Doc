@@ -8,10 +8,8 @@ type : "docs"
 weight: 3
 ---
 {{< notice "info" >}}
-Due to the sponsorship of Vicon and Qualisys, the documentation only covers Vicon and Qualisys practice.
-
+Due to the sponsorship of Vicon and Qualisys, the documentation only covers Vicon and Qualisys practices.
 We invite companies interested in interfacing their software with pyCGM2 to contact us through the contact page.  
-
 {{< /notice >}}
 
 
@@ -26,7 +24,7 @@ Check out the documentation provided by [Vicon](https://docs.vicon.com/display/N
 
 ### Bad news
 
-With Nexus-embeded or QTM-embeded pycgm2, you **have not access to the last and updated version of pyCGM2**.
+With Nexus-embedded or QTM-embedded pycgm2, you **have not access to the last and updated version of pyCGM2**.
 
 {{< notice "info" >}}
   All pages of our section **Code** are dedicated to the **external use** of pyCGM2.    

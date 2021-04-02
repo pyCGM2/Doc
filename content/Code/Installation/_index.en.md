@@ -36,8 +36,9 @@ The installation detects your Vicon Nexus version and populates *C:\\Users\\Publ
 with pre-defined nexus pipelines and nexus skeleton (vst files)
 
 {{< notice "info" >}}
-if you want to use pre-defined nexus pipelines instead of the miniconda console, you need to **add your virtual environment to your window path**
+The ewternal use of the python3 pyCGM2 release required **Nexus 2.12**.
 {{< /notice >}}
+
 
 
 #### For QTM Users
