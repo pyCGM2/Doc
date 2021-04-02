@@ -77,6 +77,11 @@ draft: false
           <p class="my-4"><i>Qualisys (Sweden)</i></p>
           <p><b>Nils Belzner</b>
         </div>
+        <div class="col-md-4 p-4">
+          <img class="img-fluid d-block rounded-circle mx-auto" src="stephane.jpg" height="200" width="200">
+          <p class="my-4"><i>Geneva Hospital</i></p>
+          <p><b>Stephane Armand</b>
+        </div>
       </div>
     </div>
 
