@@ -7,24 +7,41 @@ description: ""
 weight: 1
 ---
 
+
+{{< notice "info" >}}
+  If you want to display all avialble Nexus Application.
+
+  * Open a *miniconda console*, activate your virtual environment (type  `activate pycgm3`)
+  * type `pyCGM2-displayAllScripts.exe`
+
+{{< /notice >}}
+
+
+In the following section, you will see details of all avialble Nexus applications
+
 ### CGM applications
 
 * [CGM1.0]({{< relref "CGM1" >}})
- <!-- * [*The CGM1.1*](/pages//CGM11_NexusAppDetails.html) - The plugin Gait as it should (have) work(ed)
- * [*The CGM2.1*](/pages//CGM21_NexusAppDetails.html) - Hip Joint Centre Modification
- * [*The CGM2.2*](/pages//CGM22_NexusAppDetails.html) - Segmental lenght not vary anymore
- * [*The CGM2.3*](/pages//CGM23_NexusAppDetails.html) - The end of the wand-mounted markers
- * [*The CGM2.4*](/pages//CGM24_NexusAppDetails.html) - A 2-segment foot model
- * [*The CGM2.5*](/pages//CGM25_NexusAppDetails.html) - new head and thorax
- * [*The CGM2.6*](/pages//CGM26_NexusAppDetails.html) - Knee calibration
-
-## EMG Applications
-* [*Emg apps*](/pages//emgApps.html)
+* [CGM1.1]({{< relref "CGM11" >}})
+* [CGM2.1]({{< relref "CGM21" >}})
+* [CGM2.2]({{< relref "CGM22" >}})
+* [CGM2.3]({{< relref "CGM23" >}})
+* [CGM2.4]({{< relref "CGM24" >}})
+* [CGM2.5]({{< relref "CGM25" >}})
+* [CGM2.6]({{< relref "CGM26" >}})
 
 
-## Gait event detection
-* [*Kinematic-based algorithm*](/pages//KinematicBasedAlgorithms.html)
+<!-- ## EMG Applications
+* [*Emg apps*](/pages//emgApps.html) -->
 
 
-## Contributions
-* [*MoGapFill*](/pages//MoGapFill.html) - a gap filling method based on Kalman filter -->
+### Gait Event
+* [Kinematic-based Zeni's method]({{< relref "ZeniGaitEvent" >}}) - Gait event detection according Zeni et al.(2008) algorithm.
+
+
+<!-- ## Gait event detection
+* [*Kinematic-based algorithm*](/pages//KinematicBasedAlgorithms.html) -->
+
+
+### Gap Filling
+* [Kalman Filling]({{< ref "contribution/Code/MoGapFill#Nexus application" >}}) - This application is a contribution. It allow to fill gap based on a kalman filter.

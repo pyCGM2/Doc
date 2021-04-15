@@ -46,6 +46,24 @@ It is also important that the motions for which good data are available resemble
 
 Unfortunately, for all interpolation and gap filling approaches, there are never any guarantees that the interpolated motion is 100 % accurate. Errors are usually highly dependent on the nature of the test sequence. Regardless of the gap filling technique used, it is still crucial that end-users visually inspect corrected trajectories to evaluate the appropriateness of these techniques for their use-cases.
 
+
+### Nexus application
+
+* run Vicon nexus
+* open  *miniconda prompt*
+* activate your pycgm2 virtual environment (type  `activate pycgm3`)
+
+* [Nexus] load your c3d file
+* [miniconda Console] type `Nexus_KalmanGapFilling.exe`
+
+{{< youtube bef3R_cPxjo   >}}
+
+
+
+
+
+
+
 ### References
 
 Aristidou, A., Lasenby, J., 2013. Real-time marker prediction and cor estimation in optical motion capture. The Visual Computer 29 (1), 7–26.
