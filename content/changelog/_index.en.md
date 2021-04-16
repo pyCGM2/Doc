@@ -1,5 +1,5 @@
 ---
-title: "Changelog posts"
+title: "Changelog"
 description: ""
 draft: false
 ---
