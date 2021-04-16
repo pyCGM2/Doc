@@ -5,6 +5,7 @@ icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: ""
 # type dont remove or customize
 weight: 1
+draft: true
 ---
 
 
