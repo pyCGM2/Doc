@@ -5,13 +5,22 @@ icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: ""
 # type dont remove or customize
 weight: 1
-draft: true
 ---
+
+
+
+
+{{< notice "info" >}}
+Find below example of markdown syntax. Use it write your own content. 
+{{< /notice >}}
+
+
+
 
 
 #### Heading example
 
-Here is example of hedings. You can use this heading by following markdownify rules. For example: use `#` for heading 1 and use `######` for heading 6.
+Here is example of headings. You can use this heading by following markdownify rules. For example: use `#` for heading 1 and use `######` for heading 6.
 
 # Heading 1
 ## Heading 2
