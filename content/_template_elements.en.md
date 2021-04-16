@@ -209,3 +209,28 @@ Markdown | Less | Pretty
 ##### Youtube video
 
 {{< youtube C0DPdy98e4c >}}
+
+
+
+### Changelog label
+
+{{< changelog "Added" >}}
+{{</ changelog >}}
+
+{{< changelog "Changed" >}}
+{{</ changelog >}}
+
+{{< changelog "Depricated" >}}
+{{</ changelog >}}
+
+{{< changelog "Removed" >}}
+{{</ changelog >}}
+
+{{< changelog "Fixed" >}}
+{{</ changelog >}}
+
+{{< changelog "Security" >}}
+{{</ changelog >}}
+
+{{< changelog "Unreleased" >}}
+{{</ changelog >}}
