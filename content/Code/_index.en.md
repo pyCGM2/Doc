@@ -5,13 +5,14 @@ icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: "Installation - code manual and documentation  "
 # type dont remove or customize
 type : "docs"
-weight: 3
+weight: 4
 ---
 {{< notice "info" >}}
 Due to the sponsorship of Vicon and Qualisys, the documentation only covers Vicon and Qualisys practices.
 We invite companies interested in interfacing their software with pyCGM2 to contact us through the contact page.  
 {{< /notice >}}
 
+<!-- <div style="width: 100%;"><div style="position: relative; padding-bottom: 93.84%; padding-top: 0; height: 0;"><iframe frameborder="0" width="438" height="411" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/606b384922dac50cf1b7bc3c" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div> -->
 
 ### Good news
 

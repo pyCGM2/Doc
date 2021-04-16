@@ -9,11 +9,14 @@ weight: 2
 
 ### Install from source
 
+
 {{< youtube 9faNjsTHVfs >}}
+*this video can refer to a release different from the release indicated below*
+
 
 <hr>
 
-* download the last pycgm2 release ( [version 4.0.2-beta](https://github.com/pyCGM2/pyCGM2/releases/tag/version(4.0.2)-beta))
+* download the last pycgm2 release ( [version 4.1.0](https://github.com/pyCGM2/pyCGM2/releases/tag/version(4.1.0)))
 * go to you local downloaded zip file and unzipped it ( place it wherever)
 * open the *miniconda prompt*
 * activate your virtual python environment with `activate pycgm3`
@@ -28,6 +31,7 @@ The installation  :
 
 * generates **scripts** into the virtual environment ( here pycgm3) folder *PATHTO\\Miniconda3\\envs\\pycgm3\\Scripts*)
 * creates a folder *C:\\programData\\pycgm2* and gathers in **settings**
+
 
 
 #### For Vicon Nexus Users
@@ -45,7 +49,7 @@ The ewternal use of the python3 pyCGM2 release required **Nexus 2.12**.
 
 **Requirements**
 
-* Download the [CGM2-QTM project sample](https://github.com/pyCGM2/qualisys_CGM2_workflow)
+* Download the [CGM2-QTM project sample (version 1.0.0)](https://github.com/pyCGM2/qualisys_CGM2_workflow/releases/tag/1.0.0)
   - unzip it and copy-paste in an appropriate folder
 
 * Download [Mokka](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/b-tk/Mokka-0.6.2_win64.zip):

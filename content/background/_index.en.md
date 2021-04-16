@@ -5,5 +5,5 @@ icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: "Deep in the history of the CGM and why it needs an Update"
 # type dont remove or customize
 type : "docs"
-weight: 1
+weight: 2
 ---

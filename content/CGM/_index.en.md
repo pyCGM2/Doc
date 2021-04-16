@@ -5,7 +5,7 @@ icon: "ti-credit-card"
 description: "technical specifications"
 # type dont remove or customize
 type : "docs"
-weight: 2
+weight: 3
 ---
 
 This section presents the technical specifications of the different CGM #i models.
