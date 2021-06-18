@@ -2,7 +2,7 @@
 title: "API"
 #date: 2018-12-28T11:02:05+06:00
 icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
-description: "Installation - code manual and documentation  "
+description: "Documentation API  "
 # type dont remove or customize
 type : "docs"
 weight: 8
@@ -15,4 +15,4 @@ weight: 8
 
 ### Documentation API
 
-soon
+Documention API is **ongoing !!**  
