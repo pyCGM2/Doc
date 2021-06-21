@@ -13,15 +13,15 @@ This module gathers convenient functions fro plotting Kinematic - Kinetic and EM
 ```python
 plotTemporalKinematic(
     DATA_PATH,
-    modelledFilenames,
+    modelledFilename,
     bodyPart,
     pointLabelSuffix=None,
     exportPdf=False,
     outputName=None,
     show=True,
     title=None,
-    btkAcq=None,
-    exportPng=False
+    exportPng=False,
+    **kwargs
 )
 ```
 
@@ -35,12 +35,17 @@ plotTemporalKinematic : display temporal trace of the CGM kinematic outputs
  - <b>`modelledFilenames`</b> (str):  name of your c3d including kinematic output 
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`pointLabelSuffix`</b> (str):  suffix previously added to your model outputs. 
- - <b>`exportPdf`</b> (bool):  export as pdf (default: False). 
- - <b>`outputName`</b> (type):  name of the output file . 
- - <b>`show`</b> (bool):  show the matplotlib figure (default: True) . 
- - <b>`title`</b> (str):  modify plot panel title 
- - <b>`btkAcq`</b> (btk.Acquisition):  Description of parameter `btkAcq`. 
- - <b>`exportPng`</b> (bool): export as png (default: False). 
+
+Keyword Args: 
+ - <b>`pointLabelSuffix (str)[None] `</b>:  suffix previously added to your model outputs. 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf. 
+ - <b>`outputName (str)[None]`</b>:  name of the output file . 
+ - <b>`show (bool)[True]`</b>:  show the matplotlib figure  . 
+ - <b>`title (str)[None]`</b>:  modify plot panel title 
+ - <b>`exportPng (bool)[False]`</b>: export as png . 
+
+Keyword Args (low-level): 
+ - <b>`btkAcq (btk.Acquisition)[None]`</b>:  force use of a btkAcquisition instead of loading from `modelledFilename`. 
 
 
 
@@ -72,8 +77,8 @@ plotTemporalKinetic(
     outputName=None,
     show=True,
     title=None,
-    btkAcq=None,
-    exportPng=False
+    exportPng=False,
+    **kwargs
 )
 ```
 
@@ -87,17 +92,19 @@ plotTemporalKinetic : display temporal trace of the CGM kinetic outputs
  - <b>`modelledFilenames`</b> (str):  name of your c3d including kinematic output 
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`pointLabelSuffix`</b> (str):  suffix previously added to your model outputs. 
- - <b>`exportPdf`</b> (bool):  export as pdf (default: False). 
- - <b>`outputName`</b> (type):  name of the output file . 
- - <b>`show`</b> (bool):  show the matplotlib figure (default: True) . 
- - <b>`title`</b> (str):  modify plot panel title 
- - <b>`btkAcq`</b> (btk.Acquisition):  btk acquisition use instead of `modelledFilenames` 
- - <b>`exportPng`</b> (bool): export as png (default: False). 
+
+Keyword Args: 
+ - <b>`pointLabelSuffix (str)[None] `</b>:  suffix previously added to your model outputs. 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf. 
+ - <b>`outputName (str)[None]`</b>:  name of the output file . 
+ - <b>`show (bool)[True]`</b>:  show the matplotlib figure  . 
+ - <b>`title (str)[None]`</b>:  modify plot panel title 
+ - <b>`exportPng (bool)[False]`</b>: export as png . 
+
+Keyword Args (low-level): 
+ - <b>`btkAcq (btk.Acquisition)[None]`</b>:  force use of a btkAcquisition instead of loading from `modelledFilename`. 
 
 
-
-**Returns:**
- 
 
 
 
@@ -118,19 +125,16 @@ plotTemporalKinetic : display temporal trace of the CGM kinetic outputs
 plotTemporalEMG(
     DATA_PATH,
     processedEmgfile,
-    emgChannels,
-    muscles,
-    sides,
-    normalActivityEmgs,
+    emgSettings,
     rectify=True,
     exportPdf=False,
     outputName=None,
     show=True,
     title=None,
-    btkAcq=None,
     ignoreNormalActivity=False,
     exportPng=False,
-    OUT_PATH=None
+    OUT_PATH=None,
+    **kwargs
 )
 ```
 
@@ -142,33 +146,27 @@ Display temporal traces of EMG signals
  
  - <b>`DATA_PATH`</b> (str):  path to your data 
  - <b>`processedEmgfile`</b> (str):  name of your c3d file with emg. 
- - <b>`emgChannels`</b> (list):  names of your emg channels ( ie analog labels ). 
- - <b>`muscles`</b> (list):  names of the muscles associated to each channel. 
- - <b>`sides`</b> (list):  side ( Left or Right) where the emg device was positioned 
- - <b>`normalActivityEmgs`</b> (list):  muscle used as reference for displaying normal activity in the background. 
- - <b>`rectify`</b> (bool):  display rectify or raw signal (default: True). 
- - <b>`exportPdf`</b> (bool):  export as pdf (default: False). 
- - <b>`outputName`</b> (str):  name of the output file. 
- - <b>`show`</b> (bool):  show the matplotlib figure (default: True) . 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`btkAcq`</b> (btk.Acquisition):  btk acquisition use instead of `modelledFilenames`. 
- - <b>`ignoreNormalActivity`</b> (bool):  disable display of normal activity in the background. 
- - <b>`exportPng`</b> (bool):  export as png. 
- - <b>`OUT_PATH`</b> (str):  specify an path different than the `DATA_PATH` to export plot 
+ - <b>`emgSettings`</b> (str):  content of the emg.setting file. 
 
+Keyword Args: 
+ - <b>`rectify (bool)[True]`</b>:  display rectify or raw signal . 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf (default: False). 
+ - <b>`outputName (str)[None]`</b>:  name of the output file. 
+ - <b>`show (bool)[True]`</b>:  show the matplotlib figure (default: True) . 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`ignoreNormalActivity (bool)[False]`</b>:  disable display of normal activity in the background. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
+ - <b>`OUT_PATH (str)[None]`</b>:  specify an path different than the `DATA_PATH` to export plot 
 
-
-**Returns:**
- 
-
-
+Keyword Args (low-level): 
+ - <b>`btkAcq (btk.Acquisition)[None]`</b>:  force use of a btkAcquisition instead of loading from `processedEmgfile`. 
 
 
 
 **Examples:**
  
 
-``` plotTemporalEMG("C:\myDATA\", "file1.c3d", ["Voltage.EMG1","Voltage.EMG1"], ["RECFEM","VASLAT"], ["Left","Right"], ["RECFEM","VASLAT"])```
+``` plotTemporalEMG("C:\myDATA\", "file1.c3d", emgSettingsContent)```
 
 
 
@@ -180,10 +178,7 @@ Display temporal traces of EMG signals
 plotDescriptiveEnvelopEMGpanel(
     DATA_PATH,
     analysis,
-    emgChannels,
-    muscles,
-    contexts,
-    normalActivityEmgs,
+    emgSettings,
     normalized=False,
     type='Gait',
     exportPdf=False,
@@ -202,11 +197,10 @@ display average and standard deviation of time-normalized EMG envelops.
  
  - <b>`DATA_PATH`</b> (str):  path to your data 
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
- - <b>`emgChannels`</b> (list):  names of your emg channels ( ie analog labels ). 
- - <b>`muscles`</b> (list):  names of the muscles associated to each channel. 
- - <b>`contexts`</b> (list):  event context (Left or Right) used to display the emg envelop. It makes sense to use "Left" for event context if the emg was placed on the left RECFEM 
- - <b>`normalActivityEmgs`</b> (list):  muscle used as reference for displaying normal activity in the background. 
- - <b>`normalized`</b> (bool):  enable plot of emg normalized in amplitude (default:False). 
+ - <b>`emgSettings`</b> (str):  content of the emg.Settings file 
+
+Keyword Args: 
+ - <b>`normalized (bool)[False]`</b>:  enable plot of emg normalized in amplitude . 
  - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
  - <b>`exportPdf`</b> (bool):  export as pdf 
  - <b>`outputName`</b> (str):  name of the output filename. 
@@ -216,15 +210,12 @@ display average and standard deviation of time-normalized EMG envelops.
 
 
 
-**Returns:**
- 
-
 
 
 **Examples:**
  
 
-``` plotDescriptiveEnvelopEMGpanel("C:\myDATA\", analysisInstance, ["Voltage.EMG1","Voltage.EMG1"], ["RECFEM","VASLAT"], ["Left","Right"], ["RECFEM","VASLAT"])```
+``` plotDescriptiveEnvelopEMGpanel("C:\myDATA\", analysisInstance, emgSettingsContent)```
 
 
 
@@ -236,10 +227,7 @@ display average and standard deviation of time-normalized EMG envelops.
 plotConsistencyEnvelopEMGpanel(
     DATA_PATH,
     analysis,
-    emgChannels,
-    muscles,
-    contexts,
-    normalActivityEmgs,
+    emgSettings,
     normalized=False,
     type='Gait',
     exportPdf=False,
@@ -258,17 +246,16 @@ display all-cycles of time-normalized EMG envelops.
  
  - <b>`DATA_PATH`</b> (str):  path to your data 
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
- - <b>`emgChannels`</b> (list):  names of your emg channels ( ie analog labels ). 
- - <b>`muscles`</b> (list):  names of the muscles associated to each channel. 
- - <b>`contexts`</b> (list):  event context (Left or Right) used to display the emg envelop. It makes sense to use "Left" for event context if the emg was placed on the left RECFEM 
- - <b>`normalActivityEmgs`</b> (list):  muscle used as reference for displaying normal activity in the background. 
- - <b>`normalized`</b> (bool):  enable plot of emg normalized in amplitude (default:False). 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
+ - <b>`emgSettings`</b> (str):  content of the emg.Settings file 
+
+Keyword Args: 
+ - <b>`normalized (bool)[False]`</b>:  enable plot of emg normalized in amplitude. 
+ - <b>`type (str)[Gait]`</b>:  type of events . if different to *Gait*, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[True]`</b>:  export as png. 
 
 
 
@@ -282,7 +269,7 @@ display all-cycles of time-normalized EMG envelops.
 **Examples:**
  
 
-``` plotConsistencyEnvelopEMGpanel("C:\myDATA\", analysisInstance, ["Voltage.EMG1","Voltage.EMG1"], ["RECFEM","VASLAT"], ["Left","Right"], ["RECFEM","VASLAT"])```
+``` plotConsistencyEnvelopEMGpanel("C:\myDATA\", analysisInstance, emgSettingsContent)```
 
 
 
@@ -310,16 +297,13 @@ display spatio-temporal parameters as horizontal histogram.
  
  - <b>`DATA_PATH`</b> (str):  path to your data 
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
 
-
-
-**Returns:**
- 
+Keyword Args: 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 
@@ -362,18 +346,15 @@ display average and standard deviation of time-normalized kinematic output.
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
- - <b>`pointLabelSuffix`</b> (type): suffix previously added to your model outputs. 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
 
-
-
-**Returns:**
- 
+Keyword Args: 
+ - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
+ - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 
@@ -416,20 +397,15 @@ display all cycles of time-normalized kinematic output.
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
- - <b>`pointLabelSuffix`</b> (type): suffix previously added to your model outputs. 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
 
-
-
-**Returns:**
- 
-
-
+Keyword Args: 
+ - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
+ - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 
@@ -470,18 +446,15 @@ display average and standard deviation of time-normalized kinetic outputs.
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
- - <b>`pointLabelSuffix`</b> (type): suffix previously added to your model outputs. 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
 
-
-
-**Returns:**
- 
+Keyword Args: 
+ - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
+ - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 
@@ -524,18 +497,15 @@ display all cycles of time-normalized kinetic outputs.
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
- - <b>`pointLabelSuffix`</b> (type): suffix previously added to your model outputs. 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
 
-
-
-**Returns:**
- 
+Keyword Args: 
+ - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
+ - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 
@@ -574,18 +544,14 @@ display histogram of the Movement Analysis Profile.
  
  - <b>`DATA_PATH`</b> (str):  path to your data 
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
- - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
- - <b>`pointLabelSuffix`</b> (type): suffix previously added to your model outputs. 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
-
-
-
-**Returns:**
- 
+ - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. Keyword Args: 
+ - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
+ - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 
@@ -633,20 +599,21 @@ plot kinematics from different analysis instances.
  - <b>`context`</b> (str):  event context 
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
- - <b>`plotType`</b> (str):  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`pointSuffixes`</b> (list): suffix previously added to your model outputs. 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
+
+Keyword Args: 
+ - <b>`plotType (str)["Descrptive"]`</b>:  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
+ - <b>`type (str)[Gait]`</b>:  type of events . if different to Gait, use foot strike only to define cycles 
+ - <b>`pointSuffixes (list)[None]`</b>: suffix previously added to your model outputs. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 
-**Returns:**
- 
+
 
 
 
@@ -694,20 +661,17 @@ plot kinetics from different analysis instances.
  - <b>`context`</b> (str):  event context 
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
- - <b>`plotType`</b> (str):  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`pointSuffixes`</b> (list): suffix previously added to your model outputs. 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
 
-
-
-**Returns:**
- 
+Keyword Args: 
+ - <b>`plotType (str)["Descrptive"]`</b>:  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
+ - <b>`type (str)[Gait]`</b>:  type of events . if different to Gait, use foot strike only to define cycles 
+ - <b>`pointSuffixes (list)[None]`</b>: suffix previously added to your model outputs. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 
@@ -729,10 +693,7 @@ compareEmgEnvelops(
     DATA_PATH,
     analyses,
     legends,
-    emgChannels,
-    muscles,
-    contexts,
-    normalActivityEmgs,
+    emgSettings,
     normalized=False,
     plotType='Descriptive',
     show=True,
@@ -753,23 +714,19 @@ plot EMG envelops from different analysis instances.
  - <b>`DATA_PATH`</b> (str):  path to your data 
  - <b>`analysis`</b> (list):  list of analysis instances. 
  - <b>`legends`</b> (list):  short label representing each analysis instances 
- - <b>`emgChannels`</b> (list):  names of your emg channels ( ie analog labels ). 
- - <b>`muscles`</b> (list):  names of the muscles associated to each channel. 
- - <b>`contexts`</b> (list):  event context (Left or Right) used to display the emg envelop. It makes sense to use "Left" for event context if the emg was placed on the left RECFEM 
- - <b>`normalActivityEmgs`</b> (list):  muscle used as reference for displaying normal activity in the background. 
- - <b>`normalized`</b> (bool):  enable plot of emg normalized in amplitude (default:False). 
- - <b>`plotType`</b> (str):  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
+ - <b>`emgSettings`</b> (str):  content of the emg.Settings file 
 
-
-
-**Returns:**
- 
+Keyword Args: 
+ - <b>`normalized (bool)[False]`</b>:  enable plot of emg normalized in amplitude . 
+ - <b>`plotType (str)["Descrptive"]`</b>:  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
+ - <b>`type (str)[Gait]`</b>:  type of events . if different to Gait, use foot strike only to define cycles 
+ - <b>`pointSuffixes (list)[None]`</b>: suffix previously added to your model outputs. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 
@@ -778,7 +735,7 @@ plot EMG envelops from different analysis instances.
 **Examples:**
  
 
-``` compareEmgEnvelops("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"], ["Voltage.EMG1","Voltage.EMG1"], ["RECFEM","VASLAT"], ["Left","Right"], ["RECFEM","VASLAT"])```
+``` compareEmgEnvelops("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"], emgSettings)```
 
 
 
@@ -804,7 +761,7 @@ compareSelectedEmgEvelops(
 )
 ```
 
-compare selected EMG envelops from different analysis instances. 
+compare selected EMG envelops from different analysis instances constructed from the same session. 
 
 
 
@@ -814,23 +771,19 @@ compare selected EMG envelops from different analysis instances.
  - <b>`analysis`</b> (list):  list of analysis instances. 
  - <b>`legends`</b> (list):  short label representing each analysis instances 
  - <b>`emgChannels`</b> (list):  names of your emg channels ( ie analog labels ). 
- - <b>`muscles`</b> (list):  names of the muscles associated to each channel. 
- - <b>`contexts`</b> (list):  event context (Left or Right) used to display the emg envelop. It makes sense to use "Left" for event context if the emg was placed on the left RECFEM 
- - <b>`normalized`</b> (bool):  enable plot of emg normalized in amplitude (default:False). 
- - <b>`plotType`</b> (str):  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
- - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
- - <b>`exportPdf`</b> (bool):  export as pdf 
- - <b>`outputName`</b> (str):  name of the output filename. 
- - <b>`show`</b> (bool):  show matplotlib figure. 
- - <b>`title`</b> (str):  modify the plot panel title. 
- - <b>`exportPng`</b> (bool):  export as png. 
+ - <b>`contexts`</b> (list):  event contexts (matched with side of the emg channels). 
 
-
-
-**Returns:**
- 
-
-
+Keyword Args: 
+ - <b>`normalized (bool)[False]`</b>:  enable plot of emg normalized in amplitude . 
+ - <b>`plotType (str)["Descrptive"]`</b>:  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
+ - <b>`type (str)[Gait]`</b>:  type of events . if different to Gait, use foot strike only to define cycles 
+ - <b>`pointSuffixes (list)[None]`</b>: suffix previously added to your model outputs. 
+ - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
+ - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
+ - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
+ - <b>`outputName (str)[None]`</b>:  name of the output filename. 
+ - <b>`title (str)[None]`</b>:  modify the plot panel title. 
+ - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
 
 

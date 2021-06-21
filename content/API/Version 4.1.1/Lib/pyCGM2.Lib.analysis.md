@@ -21,14 +21,10 @@ makeAnalysis(
     kineticLabelsDict={'Left': ['LHipMoment', 'LKneeMoment', 'LAnkleMoment', 'LHipPower', 'LKneePower', 'LAnklePower'], 'Right': ['RHipMoment', 'RKneeMoment', 'RAnkleMoment', 'RHipPower', 'RKneePower', 'RAnklePower']},
     emgChannels=['Voltage.EMG1', 'Voltage.EMG2', 'Voltage.EMG3', 'Voltage.EMG4', 'Voltage.EMG5', 'Voltage.EMG6', 'Voltage.EMG7', 'Voltage.EMG8', 'Voltage.EMG9', 'Voltage.EMG10', 'Voltage.EMG11', 'Voltage.EMG12', 'Voltage.EMG13', 'Voltage.EMG14', 'Voltage.EMG15', 'Voltage.EMG16'],
     pointLabelSuffix=None,
-    btkAcqs=None,
     subjectInfo=None,
     experimentalInfo=None,
     modelInfo=None,
-    pstfilenames=None,
-    kinematicfilenames=None,
-    kineticfilenames=None,
-    emgfilenames=None
+    **kwargs
 )
 ```
 
@@ -50,21 +46,29 @@ This function normalises data in time and returns an **Analysis Instance** ie a 
 
 **Args:**
  
- - <b>`DATA_PATH`</b> (str):  folder path [REQUIRED] 
- - <b>`filenames`</b> (list):  list of c3d files to normalize [REQUIRED] 
- - <b>`type`</b> (str):  event type (choice : "Gait" or "unknown"). 
- - <b>`kinematicLabelsDict`</b> (dict):  dictionnary containing kinematic data to normalize. 
- - <b>`kineticLabelsDict`</b> (dict):  dictionnary containing kinetic data to normalize. 
- - <b>`emgChannels`</b> (list):  list of emg channel 
- - <b>`pointLabelSuffix`</b> (str):  suffix associated to pont output 
+ - <b>`DATA_PATH`</b> (str):  folder path 
+ - <b>`filenames`</b> (list):  list of c3d files to normalize 
+
+Keyword Args: 
+ - <b>`type (str)[Gait]`</b>:  event type (choice : "Gait" or "unknown"). 
+ - <b>`kinematicLabelsDict (dict)[cgm.CGM.ANALYSIS_KINEMATIC_LABELS_DICT]`</b>:  dictionnary containing kinematic data to normalize. 
+ - <b>`kineticLabelsDict (dict)[cgm.CGM.ANALYSIS_KINETIC_LABELS_DICT]`</b>:  dictionnary containing kinetic data to normalize. 
+ - <b>`emgChannels (list)[channels of emg.settings]`</b>:  list of emg channels 
+ - <b>`pointLabelSuffix (str)[None]`</b>:  suffix associated to point output 
+ - <b>`subjectInfo (dict)[None]`</b>:  dictionnary with metadata information about the subject. 
+ - <b>`experimentalInfo (dict)[None]`</b>:  dictionnary with metadata information about the expreiment. 
+ - <b>`modelInfo (dict)[None]`</b>:  dictionnary with metadata information about the model. 
+
+Keyword Args (low-level): 
  - <b>`btkAcqs`</b> (list of btk.Acquisition):  btkAcq instances to process instead of calling c3d file. 
- - <b>`subjectInfo`</b> (dict):  dictionnary with metadata information about the subject. 
- - <b>`experimentalInfo`</b> (dict):  dictionnary with metadata information about the expreiment. 
- - <b>`modelInfo`</b> (dict):  dictionnary with metadata information about the model. 
- - <b>`pstfilenames`</b> (list):  list of c3d files used for computing spatiotemporal parameters 
- - <b>`kinematicfilenames`</b> (list):  list of c3d files used to normalize kinematic data 
- - <b>`kineticfilenames`</b> (list):  list of c3d files used to normalize kinetic data 
- - <b>`emgfilenames`</b> (list):  list of c3d files used to normalize emg data 
+ - <b>`pstfilenames (list)[None]`</b>:  list of c3d files used for computing spatiotemporal parameters 
+ - <b>`kinematicfilenames (list)[None]`</b>:  list of c3d files used to normalize kinematic data 
+ - <b>`kineticfilenames (list)[None]`</b>:  list of c3d files used to normalize kinetic data 
+ - <b>`emgfilenames (list)[None]`</b>:  list of c3d files used to normalize emg data 
+
+
+
+
 
 
 
@@ -79,8 +83,13 @@ This function normalises data in time and returns an **Analysis Instance** ie a 
 **Examples:**
  
 
-``` analysisInstance2 = analysis.makeAnalysis(DATA_PATH,         [file1.c3d,"file2.c3d"],         type="Gait",         kinematicLabelsDict = {"Left": ["LHipAngles,LKneeAngles"], "Right": ["RHipAngles,RKneeAngles"]},         kineticLabelsDict = {"Left": ["LHipMoment,LKneePower"], "Right": ["RHipMoment,RKneeMoment"],         emgChannels = ["Voltage.EMG1","Voltage.EMG2","Voltage.EMG3"],         pointLabelSuffix="cgm1",         subjectInfo = {"Name":"Doe","Firstname":"John"},         experimentalInfo = {"Barefoot":"No"},         modelInfo = {"Model":"CGM1"})```
+The code below takes 2 c3d files, the time normalized kinematics, kinetics and emg. Kinematic , kinetic and emg labels are the default CGM output and emg channels from the emg.setting file 
 
+``` analysisInstance = analysis.makeAnalysis(DATA_PATH,     [file1.c3d,"file2.c3d"])```
+
+A more advanced use ( see below) called specific model outputs and emg channels. This code also adds a subject, experimental and model metadata:
+
+``` analysisInstance2 = analysis.makeAnalysis(DATA_PATH,         [file1.c3d,"file2.c3d"],         kinematicLabelsDict = {"Left": ["LHipAngles,LKneeAngles"], "Right": ["RHipAngles,RKneeAngles"]},         kineticLabelsDict = {"Left": ["LHipMoment,LKneePower"], "Right": ["RHipMoment,RKneeMoment"],         emgChannels = ["Voltage.EMG1","Voltage.EMG2","Voltage.EMG3"],         subjectInfo = {"Name":"Doe","Firstname":"John"},         experimentalInfo = {"Barefoot":"No"},         modelInfo = {"Model":"CGM1"})``` 
 
 
 ---
@@ -100,7 +109,14 @@ export an Analysis instance as excel spreadsheet.
  - <b>`analysisInstance`</b> (pyCGM2.Processing.analysis.Analysis):  Analysis instance. 
  - <b>`DATA_PATH`</b> (str): folder path 
  - <b>`name`</b> (str):  name of your excel file. 
- - <b>`mode`</b> (str):  spreadsheet mode . ("Advanced or basic") 
+
+Keyword Args: 
+ - <b>`mode (str)[Advanced]`</b>:  spreadsheet mode . ("Advanced or Basic") 
+
+Examples 
+
+``` exportAnalysis(AnalysisInstance, "c:\DATA\","johnDoe")```
+
 
 
 ---

@@ -29,13 +29,12 @@ This method need the presence of the markers "LPSI","RPSI","LHEE","LTOE","RHEE",
 **Args:**
  
  - <b>`acqGait`</b> (btkAcq):  acquisition instance. 
- - <b>`footStrikeOffset`</b> (int):  systematic offset to add to all `footStrikeOffset` events. 
- - <b>`footOffOffset`</b> (int):  systematic offset to add to all `footOffOffset` events. kwargs (known arguments): 
 
+Keyword Args: 
+ - <b>`footStrikeOffset (int)[0]`</b>:  systematic offset to add to all `footStrikeOffset` events. 
+ - <b>`footOffOffset (int)[0]`</b>:  systematic offset to add to all `footOffOffset` events. 
 
-
-**Kwargs:**
- 
+Keyword Args (low-level): 
  - <b>`fc_lowPass_marker (double) `</b>:  cut-off frequency of the lowpass filter applied on markers 
  - <b>`order_lowPass_marker`</b> (int):  order of the lowpass filter applied on markers 
 
