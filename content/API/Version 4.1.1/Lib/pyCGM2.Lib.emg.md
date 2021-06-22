@@ -5,6 +5,9 @@ title: pyCGM2.Lib.emg
 # <kbd>module</kbd> `pyCGM2.Lib.emg`
 
 
+****
+
+
 
 
 
@@ -26,6 +29,9 @@ processEMG(
 
 basic filtering of EMG from c3d files . 
 
+****
+
+
 
 
 **Args:**
@@ -34,16 +40,29 @@ basic filtering of EMG from c3d files .
  - <b>`gaitTrials`</b> (str):  list of c3d files. 
  - <b>`emgChannels`</b> (list):  list or emg channel 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`highPassFrequencies (list)[20,200]`</b>:  boundaries of the bandpass filter 
  - <b>`envelopFrequency (float)[6.0]`</b>:  cut-off frequency of low pass emg 
  - <b>`fileSuffix (str)[None]`</b>:  add a suffix to the exported c3d files 
  - <b>`outDataPath (str)[None]`</b>:  path to place the exported c3d files. 
 
+****
+
+
 Examples 
 
-``` emg.processEMG(DATA_PATH, ["file1.c3d","file2.c3d"], ["Voltage.EMG1","Voltage.EMG2"])```
+****
 
+
+```python
+emg.processEMG(DATA_PATH, ["file1.c3d","file2.c3d"], ["Voltage.EMG1","Voltage.EMG2"])
+``` 
 
 
 ---
@@ -63,7 +82,13 @@ normalizedEMG(
 
 Emg normalisation in amplitude. 
 
+****
+
+
 This function update the analysis instance with normalized emg signal in amplitude 
+
+****
+
 
 
 
@@ -73,19 +98,45 @@ This function update the analysis instance with normalized emg signal in amplitu
  - <b>`emgChannels`</b> (str):  list or emg channel 
  - <b>`contexts`</b> (list):  indicate event context 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`method (str)["MeanMax"]`</b>:  normalisation method (choice : MeanMax, MaxMax, MedianMax ). 
  - <b>`fromOtherAnalysis (pyCGM2.Processing.analysis.Analysis)[None]`</b>:  normalise in amplitude from another analysis instance. 
  - <b>`mvcSettings (dict)[None]`</b>:  mvc settings. 
 
+****
 
 
 
 
-Examples 
+****
 
-``` emg.normalizedEMG(emgAnalysisInstance,                 ["Voltage.EMG1","Voltage.EMG2"],                 ["Left","Right"],                 method="MeanMax",                 fromOtherAnalysis=emgAnalysisInstancePreBloc)```
 
+
+
+****
+
+
+
+
+**Examples:**
+ 
+
+****
+
+
+```python
+emg.normalizedEMG(emgAnalysisInstance,
+.................["Voltage.EMG1","Voltage.EMG2"],
+.................["Left","Right"],
+.................method="MeanMax",
+.................fromOtherAnalysis=emgAnalysisInstancePreBloc)
+``` 
 
 
 ---
@@ -101,6 +152,9 @@ processEMG_fromBtkAcq(
 )
 ```
 
+
+
+****
 
 
 

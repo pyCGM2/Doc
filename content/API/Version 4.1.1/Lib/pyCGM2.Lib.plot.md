@@ -27,6 +27,9 @@ plotTemporalKinematic(
 
 plotTemporalKinematic : display temporal trace of the CGM kinematic outputs 
 
+****
+
+
 
 
 **Args:**
@@ -36,7 +39,13 @@ plotTemporalKinematic : display temporal trace of the CGM kinematic outputs
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`pointLabelSuffix`</b> (str):  suffix previously added to your model outputs. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`pointLabelSuffix (str)[None] `</b>:  suffix previously added to your model outputs. 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf. 
  - <b>`outputName (str)[None]`</b>:  name of the output file . 
@@ -44,14 +53,26 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify plot panel title 
  - <b>`exportPng (bool)[False]`</b>: export as png . 
 
+****
+
+
 Keyword Args (low-level): 
  - <b>`btkAcq (btk.Acquisition)[None]`</b>:  force use of a btkAcquisition instead of loading from `modelledFilename`. 
+
+****
+
 
 
 
 **Returns:**
  
 
+****
+
+
+
+
+****
 
 
 
@@ -59,8 +80,12 @@ Keyword Args (low-level):
 **Examples:**
  
 
-``` plotTemporalKinematic("C:\myDATA\", "file1.c3d","LowerLimb")```
+****
 
+
+```python
+plotTemporalKinematic("C:\myDATA\", "file1.c3d","LowerLimb")
+``` 
 
 
 ---
@@ -84,6 +109,9 @@ plotTemporalKinetic(
 
 plotTemporalKinetic : display temporal trace of the CGM kinetic outputs 
 
+****
+
+
 
 
 **Args:**
@@ -93,7 +121,13 @@ plotTemporalKinetic : display temporal trace of the CGM kinetic outputs
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`pointLabelSuffix`</b> (str):  suffix previously added to your model outputs. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`pointLabelSuffix (str)[None] `</b>:  suffix previously added to your model outputs. 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf. 
  - <b>`outputName (str)[None]`</b>:  name of the output file . 
@@ -101,11 +135,23 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify plot panel title 
  - <b>`exportPng (bool)[False]`</b>: export as png . 
 
+****
+
+
 Keyword Args (low-level): 
  - <b>`btkAcq (btk.Acquisition)[None]`</b>:  force use of a btkAcquisition instead of loading from `modelledFilename`. 
 
+****
 
 
+
+
+****
+
+
+
+
+****
 
 
 
@@ -113,8 +159,12 @@ Keyword Args (low-level):
 **Examples:**
  
 
-``` plotTemporalKinetic("C:\myDATA\", "file1.c3d","LowerLimb")```
+****
 
+
+```python
+plotTemporalKinetic("C:\myDATA\", "file1.c3d","LowerLimb")
+``` 
 
 
 ---
@@ -140,6 +190,9 @@ plotTemporalEMG(
 
 Display temporal traces of EMG signals 
 
+****
+
+
 
 
 **Args:**
@@ -148,7 +201,13 @@ Display temporal traces of EMG signals
  - <b>`processedEmgfile`</b> (str):  name of your c3d file with emg. 
  - <b>`emgSettings`</b> (str):  content of the emg.setting file. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`rectify (bool)[True]`</b>:  display rectify or raw signal . 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf (default: False). 
  - <b>`outputName (str)[None]`</b>:  name of the output file. 
@@ -158,16 +217,26 @@ Keyword Args:
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
  - <b>`OUT_PATH (str)[None]`</b>:  specify an path different than the `DATA_PATH` to export plot 
 
+****
+
+
 Keyword Args (low-level): 
  - <b>`btkAcq (btk.Acquisition)[None]`</b>:  force use of a btkAcquisition instead of loading from `processedEmgfile`. 
+
+****
+
 
 
 
 **Examples:**
  
 
-``` plotTemporalEMG("C:\myDATA\", "file1.c3d", emgSettingsContent)```
+****
 
+
+```python
+plotTemporalEMG("C:\myDATA\", "file1.c3d", emgSettingsContent)
+``` 
 
 
 ---
@@ -191,6 +260,9 @@ plotDescriptiveEnvelopEMGpanel(
 
 display average and standard deviation of time-normalized EMG envelops. 
 
+****
+
+
 
 
 **Args:**
@@ -199,7 +271,13 @@ display average and standard deviation of time-normalized EMG envelops.
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
  - <b>`emgSettings`</b> (str):  content of the emg.Settings file 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`normalized (bool)[False]`</b>:  enable plot of emg normalized in amplitude . 
  - <b>`type`</b> (str):  type of events (default: Gait). if different to Gait, use foot strike only to define cycles 
  - <b>`exportPdf`</b> (bool):  export as pdf 
@@ -208,6 +286,12 @@ Keyword Args:
  - <b>`title`</b> (str):  modify the plot panel title. 
  - <b>`exportPng`</b> (bool):  export as png. 
 
+****
+
+
+
+
+****
 
 
 
@@ -215,8 +299,12 @@ Keyword Args:
 **Examples:**
  
 
-``` plotDescriptiveEnvelopEMGpanel("C:\myDATA\", analysisInstance, emgSettingsContent)```
+****
 
+
+```python
+plotDescriptiveEnvelopEMGpanel("C:\myDATA\", analysisInstance, emgSettingsContent)
+``` 
 
 
 ---
@@ -240,6 +328,9 @@ plotConsistencyEnvelopEMGpanel(
 
 display all-cycles of time-normalized EMG envelops. 
 
+****
+
+
 
 
 **Args:**
@@ -248,7 +339,13 @@ display all-cycles of time-normalized EMG envelops.
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
  - <b>`emgSettings`</b> (str):  content of the emg.Settings file 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`normalized (bool)[False]`</b>:  enable plot of emg normalized in amplitude. 
  - <b>`type (str)[Gait]`</b>:  type of events . if different to *Gait*, use foot strike only to define cycles 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
@@ -257,11 +354,20 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[True]`</b>:  export as png. 
 
+****
+
+
 
 
 **Returns:**
  
 
+****
+
+
+
+
+****
 
 
 
@@ -269,8 +375,12 @@ Keyword Args:
 **Examples:**
  
 
-``` plotConsistencyEnvelopEMGpanel("C:\myDATA\", analysisInstance, emgSettingsContent)```
+****
 
+
+```python
+plotConsistencyEnvelopEMGpanel("C:\myDATA\", analysisInstance, emgSettingsContent)
+``` 
 
 
 ---
@@ -291,6 +401,9 @@ plot_spatioTemporal(
 
 display spatio-temporal parameters as horizontal histogram. 
 
+****
+
+
 
 
 **Args:**
@@ -298,13 +411,25 @@ display spatio-temporal parameters as horizontal histogram.
  - <b>`DATA_PATH`</b> (str):  path to your data 
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
  - <b>`outputName (str)[None]`</b>:  name of the output filename. 
  - <b>`show (bool)[True]`</b>:  show matplotlib figure. 
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
+
+
+
+
+****
 
 
 
@@ -312,8 +437,12 @@ Keyword Args:
 **Examples:**
  
 
-``` plot_spatioTemporal("C:\myDATA\", analysisInstance)```
+****
 
+
+```python
+plot_spatioTemporal("C:\myDATA\", analysisInstance)
+``` 
 
 
 ---
@@ -338,6 +467,9 @@ plot_DescriptiveKinematic(
 
 display average and standard deviation of time-normalized kinematic output. 
 
+****
+
+
 
 
 **Args:**
@@ -347,7 +479,13 @@ display average and standard deviation of time-normalized kinematic output.
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
  - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
@@ -356,6 +494,12 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
+
+
+
+
+****
 
 
 
@@ -363,8 +507,12 @@ Keyword Args:
 **Examples:**
  
 
-``` plot_DescriptiveKinematic("c:\mydata\",analysisInstance,"LowerLimb",normativeInstance)```
+****
 
+
+```python
+plot_DescriptiveKinematic("c:\mydata\",analysisInstance,"LowerLimb",normativeInstance)
+``` 
 
 
 ---
@@ -389,6 +537,9 @@ plot_ConsistencyKinematic(
 
 display all cycles of time-normalized kinematic output. 
 
+****
+
+
 
 
 **Args:**
@@ -398,7 +549,13 @@ display all cycles of time-normalized kinematic output.
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
  - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
@@ -407,13 +564,20 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
+
+
 
 
 **Examples:**
  
 
-``` plot_ConsistencyKinematic("c:\mydata\",analysisInstance,"LowerLimb",normativeInstance)```
+****
 
+
+```python
+plot_ConsistencyKinematic("c:\mydata\",analysisInstance,"LowerLimb",normativeInstance)
+``` 
 
 
 ---
@@ -438,6 +602,9 @@ plot_DescriptiveKinetic(
 
 display average and standard deviation of time-normalized kinetic outputs. 
 
+****
+
+
 
 
 **Args:**
@@ -447,7 +614,13 @@ display average and standard deviation of time-normalized kinetic outputs.
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
  - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
@@ -456,6 +629,12 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
+
+
+
+
+****
 
 
 
@@ -463,8 +642,12 @@ Keyword Args:
 **Examples:**
  
 
-``` plot_DescriptiveKinetic("c:\mydata\",analysisInstance,"LowerLimb",normativeInstance)```
+****
 
+
+```python
+plot_DescriptiveKinetic("c:\mydata\",analysisInstance,"LowerLimb",normativeInstance)
+``` 
 
 
 ---
@@ -489,6 +672,9 @@ plot_ConsistencyKinetic(
 
 display all cycles of time-normalized kinetic outputs. 
 
+****
+
+
 
 
 **Args:**
@@ -498,7 +684,13 @@ display all cycles of time-normalized kinetic outputs.
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
  - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
@@ -507,6 +699,12 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
+
+
+
+
+****
 
 
 
@@ -514,8 +712,12 @@ Keyword Args:
 **Examples:**
  
 
-``` plot_ConsistencyKinetic("c:\mydata\",analysisInstance,"LowerLimb",normativeInstance)```
+****
 
+
+```python
+plot_ConsistencyKinetic("c:\mydata\",analysisInstance,"LowerLimb",normativeInstance)
+``` 
 
 
 ---
@@ -538,13 +740,19 @@ plot_MAP(
 
 display histogram of the Movement Analysis Profile. 
 
+****
+
+
 
 
 **Args:**
  
  - <b>`DATA_PATH`</b> (str):  path to your data 
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  analysis instance. 
- - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. Keyword Args: 
+ - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
+
+**Keyword Args:**
+ 
  - <b>`pointLabelSuffix (str)[None]`</b>: suffix previously added to your model outputs. 
  - <b>`type (str)[Gait]`</b>:  type of events. if different to Gait, use foot strike only to define cycles 
  - <b>`exportPdf (bool)[False]`</b>:  export as pdf 
@@ -553,6 +761,12 @@ display histogram of the Movement Analysis Profile.
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
+
+
+
+
+****
 
 
 
@@ -560,8 +774,12 @@ display histogram of the Movement Analysis Profile.
 **Examples:**
  
 
-``` plot_MAP("c:\mydata\",analysisInstance,normativeInstance)```
+****
 
+
+```python
+plot_MAP("c:\mydata\",analysisInstance,normativeInstance)
+``` 
 
 
 ---
@@ -589,6 +807,9 @@ compareKinematic(
 
 plot kinematics from different analysis instances. 
 
+****
+
+
 
 
 **Args:**
@@ -600,7 +821,13 @@ plot kinematics from different analysis instances.
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`plotType (str)["Descrptive"]`</b>:  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
  - <b>`type (str)[Gait]`</b>:  type of events . if different to Gait, use foot strike only to define cycles 
  - <b>`pointSuffixes (list)[None]`</b>: suffix previously added to your model outputs. 
@@ -611,10 +838,22 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
 
 
 
 
+****
+
+
+
+
+****
+
+
+
+
+****
 
 
 
@@ -622,8 +861,12 @@ Keyword Args:
 **Examples:**
  
 
-``` compareKinematic("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"],"Left","LowerLimb",normativeInstance)```
+****
 
+
+```python
+compareKinematic("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"],"Left","LowerLimb",normativeInstance)
+``` 
 
 
 ---
@@ -651,6 +894,9 @@ compareKinetic(
 
 plot kinetics from different analysis instances. 
 
+****
+
+
 
 
 **Args:**
@@ -662,7 +908,13 @@ plot kinetics from different analysis instances.
  - <b>`bodyPart`</b> (str):  body part (choice : LowerLimb, Trunk, UpperLimb) 
  - <b>`normativeDataset`</b> (pyCGM2.Report.normativeDatasets.NormativeData):  normative data instance. 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`plotType (str)["Descrptive"]`</b>:  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
  - <b>`type (str)[Gait]`</b>:  type of events . if different to Gait, use foot strike only to define cycles 
  - <b>`pointSuffixes (list)[None]`</b>: suffix previously added to your model outputs. 
@@ -673,6 +925,12 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
+
+
+
+
+****
 
 
 
@@ -680,8 +938,12 @@ Keyword Args:
 **Examples:**
  
 
-``` compareKinetic("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"],"Left","LowerLimb",normativeInstance)```
+****
 
+
+```python
+compareKinetic("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"],"Left","LowerLimb",normativeInstance)
+``` 
 
 
 ---
@@ -707,6 +969,9 @@ compareEmgEnvelops(
 
 plot EMG envelops from different analysis instances. 
 
+****
+
+
 
 
 **Args:**
@@ -716,7 +981,13 @@ plot EMG envelops from different analysis instances.
  - <b>`legends`</b> (list):  short label representing each analysis instances 
  - <b>`emgSettings`</b> (str):  content of the emg.Settings file 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`normalized (bool)[False]`</b>:  enable plot of emg normalized in amplitude . 
  - <b>`plotType (str)["Descrptive"]`</b>:  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
  - <b>`type (str)[Gait]`</b>:  type of events . if different to Gait, use foot strike only to define cycles 
@@ -728,6 +999,12 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
+
+
+
+
+****
 
 
 
@@ -735,8 +1012,12 @@ Keyword Args:
 **Examples:**
  
 
-``` compareEmgEnvelops("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"], emgSettings)```
+****
 
+
+```python
+compareEmgEnvelops("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"], emgSettings)
+``` 
 
 
 ---
@@ -763,6 +1044,9 @@ compareSelectedEmgEvelops(
 
 compare selected EMG envelops from different analysis instances constructed from the same session. 
 
+****
+
+
 
 
 **Args:**
@@ -773,7 +1057,13 @@ compare selected EMG envelops from different analysis instances constructed from
  - <b>`emgChannels`</b> (list):  names of your emg channels ( ie analog labels ). 
  - <b>`contexts`</b> (list):  event contexts (matched with side of the emg channels). 
 
-Keyword Args: 
+****
+
+
+
+
+**Keyword Args:**
+ 
  - <b>`normalized (bool)[False]`</b>:  enable plot of emg normalized in amplitude . 
  - <b>`plotType (str)["Descrptive"]`</b>:  descriptive (ie average + sd) or consistency plots ( choice: Descriptive, Consistency) 
  - <b>`type (str)[Gait]`</b>:  type of events . if different to Gait, use foot strike only to define cycles 
@@ -785,15 +1075,25 @@ Keyword Args:
  - <b>`title (str)[None]`</b>:  modify the plot panel title. 
  - <b>`exportPng (bool)[False]`</b>:  export as png. 
 
+****
+
+
 
 
 **Examples:**
  
 
+****
+
+
 The following code plots the channel *Voltage.EMG1* time-normalized according *Left* events included in *analysisInstance1* with *Voltage.EMG2* time-normalized according *Left* events included in  *analysisInstance2*. 
 
-``` compareSelectedEmgEvelops("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"], ["Voltage.EMG1","Voltage.EMG2"], ["Left","Left"])```
+****
 
+
+```python
+compareSelectedEmgEvelops("c:\mydata\",[analysisInstance1,analysisInstance2],["pre","post"], ["Voltage.EMG1","Voltage.EMG2"], ["Left","Left"])
+``` 
 
 
 
