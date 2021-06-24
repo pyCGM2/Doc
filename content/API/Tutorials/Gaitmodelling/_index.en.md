@@ -43,7 +43,7 @@ from pyCGM2 import enums
 from pyCGM2.Lib.CGM import cgm2_1
 
 
-DATA_PATH =  os.getcwd()+"//"
+DATA_PATH = "C:\\myPATH\\"
 staticFile ="03367_05136_20200604-SBNNN-VDEF-02.c3d"
 trialName = "03367_05136_20200604-GBNNN-VDEF-01.c3d"
 
