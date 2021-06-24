@@ -17,5 +17,5 @@ Model outputs are stored in the c3d according the vicon nomenclature (e.g) :
 
 * LHipAngles: Left Hip angles
 * LHipMoment: Left Hip moment
-* LHipPower: Left Hip LHip
-* LFootProgressAngle : Left Foot Progress angle ( absolute angle)  
+* LHipPower: Left Hip power
+* LFootProgressAngle : Left Foot Progress angle (absolute angle)  

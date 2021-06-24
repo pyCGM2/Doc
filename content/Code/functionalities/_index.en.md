@@ -15,4 +15,4 @@ I invite you :
 * to locate on your computer the **scripts** and **settings** folders:
 
   - *PATHTO\\Miniconda3\\envs\\pycgm3\\Scripts*
-  - *C:\\programData\\pycgm2*
+  - *PATHTO\\Miniconda3\\envs\\pycgm3\\Lib\\Site-package\\pyCGM2\\Settings*
