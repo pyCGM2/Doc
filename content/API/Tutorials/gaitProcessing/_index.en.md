@@ -83,6 +83,8 @@ analysisInstance = analysis.makeAnalysis(DATA_PATH,
 
 ```
 
+
+
 #### Process specific model outputs  
 
 In the code below, we focus on specific kinematic and kinetic model outputs. We normalize the outputs   
@@ -101,6 +103,23 @@ analysisInstance = analysis.makeAnalysis(DATA_PATH,
                     )
 
 ```
+
+#### process specific emg channels
+
+Instead of calling defaut emg channels named   `["Voltage.EMG1","Voltage.EMG2",....,Voltage.EMG16]`, the code below called the analog channels named  `['myEMG1','myEMG2']` only
+
+
+```python
+analysisInstance = analysis.makeAnalysis(DATA_PATH,
+                    modelledFilenames,
+                    emgChannels = ['myEMG1','myEMG2']
+                    subjectInfo={"Name":"Hannibal"},
+                    experimentalInfo={"Context":"Post-Toxin"},
+                    modelInfo={"model":"CGM"},
+                    )
+
+```
+
 
 
 #### compute Spatio-temporal parameters, Kinematics, kinetics and emg from different ciles  
