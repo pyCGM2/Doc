@@ -13,6 +13,35 @@ title: pyCGM2.Lib.emg
 
 ---
 
+## <kbd>function</kbd> `loadEmg`
+
+```python
+loadEmg(DATA_PATH)
+```
+
+Load and manage emg settings 
+
+****
+
+
+
+
+**Args:**
+ 
+ - <b>`DATA_PATH`</b> (str):  folder path. 
+
+****
+
+
+
+
+**Returns:**
+ 
+ - <b>`pyCGM2.EMG.EmgManger`</b>:  an emg manager class instance 
+
+
+---
+
 ## <kbd>function</kbd> `processEMG`
 
 ```python
@@ -71,9 +100,8 @@ emg.processEMG(DATA_PATH, ["file1.c3d","file2.c3d"], ["Voltage.EMG1","Voltage.EM
 
 ```python
 normalizedEMG(
+    DATA_PATH,
     analysis,
-    emgChannels,
-    contexts,
     method='MeanMax',
     fromOtherAnalysis=None,
     mvcSettings=None
@@ -95,8 +123,7 @@ This function update the analysis instance with normalized emg signal in amplitu
 **Args:**
  
  - <b>`analysis`</b> (pyCGM2.Processing.analysis.Analysis):  an analysis Instance 
- - <b>`emgChannels`</b> (str):  list or emg channel 
- - <b>`contexts`</b> (list):  indicate event context 
+ - <b>`DATA_PATH`</b> (str):  folder path 
 
 ****
 

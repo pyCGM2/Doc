@@ -41,11 +41,13 @@ analysis.exportAnalysis(analysisInstance,DATA_PATH,"spreadsheet")
 
 The central object is the `analysisInstance` built from the function  `makeAnalysis`.
 This function time-normalize all model data (ie kinematic and kinetic model outputs) and all emg analog channels, then gather everything in a **single instance**.
-By default in pyCGM2, the emg channels are labelled :
+By default in pyCGM2, the emg channels are labelled:`["Voltage.EMG1","Voltage.EMG2",....,Voltage.EMG16]`
 
-```
-["Voltage.EMG1","Voltage.EMG2",....,Voltage.EMG16]
-```
+{{< notice "info" >}}
+  An **Analysis Instance** call cmd files collected  under similar specific gait condition <br/>
+  A clinical gait analysis session can thus contains several **Analysis Instances**. Indeed, you may want to analyse gait data collected at self-selected speed in barefoot, or at fast-speed with shoes and orthosis.   
+{{< /notice >}}
+
 
 From the `analysisInstance`, you can simply call convenient plot functions and export as xlsx spreadsheet.  
 

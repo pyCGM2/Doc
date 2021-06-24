@@ -175,7 +175,6 @@ plotTemporalKinetic("C:\myDATA\", "file1.c3d","LowerLimb")
 plotTemporalEMG(
     DATA_PATH,
     processedEmgfile,
-    emgSettings,
     rectify=True,
     exportPdf=False,
     outputName=None,
@@ -247,7 +246,6 @@ plotTemporalEMG("C:\myDATA\", "file1.c3d", emgSettingsContent)
 plotDescriptiveEnvelopEMGpanel(
     DATA_PATH,
     analysis,
-    emgSettings,
     normalized=False,
     type='Gait',
     exportPdf=False,
@@ -315,7 +313,6 @@ plotDescriptiveEnvelopEMGpanel("C:\myDATA\", analysisInstance, emgSettingsConten
 plotConsistencyEnvelopEMGpanel(
     DATA_PATH,
     analysis,
-    emgSettings,
     normalized=False,
     type='Gait',
     exportPdf=False,
@@ -955,7 +952,6 @@ compareEmgEnvelops(
     DATA_PATH,
     analyses,
     legends,
-    emgSettings,
     normalized=False,
     plotType='Descriptive',
     show=True,
