@@ -15,6 +15,11 @@ weight: 8
 
 ### Documentation API
 
+{{< notice "info" >}}
+  API Documentation sections covers codes of **the pyCGM2 version 4.2.0**    
+{{< /notice >}}
+
+
 Though it is ongoing, the Documentation API does not cover the whole package yet.
 
 Instead, We  focus the documentation on the *high level functions* gathered into the module `Lib` of  pyCGM2.

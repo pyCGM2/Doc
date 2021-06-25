@@ -10,6 +10,24 @@ We value your feedback : Submit your suggestions for improvements
 {{< /notice >}}
 
 
+###  BETA pyCGM2 4.2.0 - [june, 2021]
+
+{{< changelog "Added" >}}
+  * documentation API generator.  Google style doctrings are parsed and rendered as markdown.
+  * new folder *examples**  with basic scripts.
+{{</ changelog >}}
+
+{{< changelog "Changed" >}}
+
+  * installation  do not copy  settings into the folder *c:/programData/pycgm2/*. Default settings are called from the *settings* folder of your installed pyCGM2 package     
+  * better management of the settings file (emg.settings and CGMi-pycgm2.settings).  `Utils.files.loadModelSettings` looks for a cgm settings file in your data folder if not found. it loads the default cgm settings.  
+  *  emg processing functions improved. better management of the emg.settings through a  new class `EMG.EmgManager`  
+
+ {{</ changelog >}}
+
+{{< changelog "Fixed" >}}
+  * wrong settings  are called if you have several virtual environment
+{{</ changelog >}}
 
 ###  pyCGM2 4.1.0 - Phantoms- [april, 2021]
 

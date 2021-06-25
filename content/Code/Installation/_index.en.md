@@ -16,12 +16,13 @@ weight: 2
 
 <hr>
 
-* download the last pycgm2 release ( [version 4.1.0](https://github.com/pyCGM2/pyCGM2/releases/tag/version(4.1.0)))
+* download the last pycgm2 release ( [version 4.1.0](https://github.com/pyCGM2/pyCGM2/releases/tag/version(4.1.0))) or the pycgm2 pre-release ( [version 4.2.0-beta](https://github.com/pyCGM2/pyCGM2/releases/tag/version(4.2.0-beta)))
+
 * go to you local downloaded zip file and unzipped it ( place it wherever)
 * open the *miniconda prompt*
 * activate your virtual python environment with `activate pycgm3`
 * go to your local unzipped folder ( folder with the file *setup.py*)
-* type `python setup.py install`
+* type `python setup.py install`  or `pip install .`
 * check import of pycgm2, type:
   * `python` to open a python
   * `import pyCGM2`
@@ -30,7 +31,6 @@ weight: 2
 The installation  :
 
 * generates **scripts** into the virtual environment ( here pycgm3) folder *PATHTO\\Miniconda3\\envs\\pycgm3\\Scripts*)
-* creates a folder *C:\\programData\\pycgm2* and gathers in **settings**
 
 
 
