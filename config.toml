@@ -66,16 +66,10 @@ url = "team"
 weight = 2
 
 
-# footer menu
-[[menu.footer]]
-name = "Changelog"
-url = "changelog"
-weight = 1
-
 [[menu.footer]]
 name = "contact"
 url = "contact"
-weight = 2
+weight = 1
 
 
 
@@ -102,11 +96,14 @@ enable = true
 label = "changelog"
 link = "changelog"
 
+
+
+
 # Navigation button solid
 [params.navigation_button_solid]
 enable = true
-label = "contact"
-link = "contact"
+label = "Contribute"
+link = "contribute"
 
 
 ############################# Sponsors ########################
@@ -136,10 +133,10 @@ image = "images/unige.png" # themify icon : https://themify.me/themify-icons
 link = "#"
 
 ############################# social site ########################
-[[params.social]]
-title = "facebook"
-icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
-link = "#"
+#[[params.social]]
+#title = "facebook"
+#icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
+#link = "#"
 
 [[params.social]]
 title = "twitter"
@@ -151,10 +148,10 @@ title = "github"
 icon = "ti-github" # themify icon : https://themify.me/themify-icons
 link = "#"
 
-[[params.social]]
-title = "linkedin"
-icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
-link = "#"
+#[[params.social]]
+#title = "linkedin"
+#icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+#link = "#"
 
 
 ################################### English language #####################################

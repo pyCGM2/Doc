@@ -9,7 +9,7 @@ weight: 1
 
 
 {{< notice "info" >}}
-  If you want to display all avialble Nexus Application.
+  If you want to display all available Nexus Application.
 
   * Open a *miniconda console*, activate your virtual environment (type  `activate pycgm3`)
   * type `pyCGM2-displayAllScripts.exe`

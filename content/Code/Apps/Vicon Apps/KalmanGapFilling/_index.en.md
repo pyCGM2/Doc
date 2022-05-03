@@ -7,11 +7,16 @@ description: ""
 weight: 9
 ---
 
-{{< notice "note" >}}
-  This code is a contribution </br>
-  Check out [Contribution]({{< ref "contribution/Code/MoGapFill" >}})  to find out details
+{{< notice "info" >}}
+**Code contribution**, we thank Mickael Burke for sharing scripts.
 {{< /notice >}}
 
+The *MogapFill* app is an adaptation of the open-access code from [Burke and Lasenby 2016](https://www.sciencedirect.com/science/article/pii/S0021929016304766?via%3Dihub) (Burke and Lasenby 2016)   
+
+
+Find out  the [theory]({{< relref "./theory" >}}) of this approach in the next section
+
+## Work with Nexus
 
 * run Vicon nexus
 * open  *miniconda prompt*

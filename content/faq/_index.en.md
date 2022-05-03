@@ -16,17 +16,3 @@ if you use the CGM2.1, please cite this paper:
 > Leboeuf, F.; Reay, J.; Jones, R.; Sangeux, M. (2019) The effect on conventional gait model kinematics and kinetics of hip joint centre equations in adult healthy gait. In : Journal of biomechanics, vol. 87, p. 167–171. DOI: 10.1016/j.jbiomech.2019.02.010.
 
 {{</ faq >}}
-
-
-{{< faq "Want to contribute ?" >}}
-
-We hope other people will want to use our CGM and would like to invite you to work with us.
-
-* -Help with validation
-* -Share data
-* -Share code
-* -Propose a case study
-
-Check out this **[link]({{< ref "contribution/Contribute" >}})**
-
-{{</ faq >}}

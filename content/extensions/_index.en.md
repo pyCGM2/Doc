@@ -5,7 +5,7 @@ icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: "code extensions"
 # type dont remove or customize
 type : "docs"
-weight: 6
+weight: 5
 ---
 
 ![image](coming-soon.png)

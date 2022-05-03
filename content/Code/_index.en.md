@@ -1,11 +1,11 @@
 ---
-title: "Code"
+title: "Install and Apps"
 #date: 2018-12-28T11:02:05+06:00
 icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
-description: "Installation - code manual and documentation  "
+description: "Install guidelines - available apps for Vicon or QTM users  "
 # type dont remove or customize
 type : "docs"
-weight: 4
+weight: 3
 ---
 {{< notice "info" >}}
 Due to the sponsorship of Vicon and Qualisys, the documentation only covers Vicon and Qualisys practices.
