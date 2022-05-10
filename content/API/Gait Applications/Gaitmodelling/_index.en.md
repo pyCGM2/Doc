@@ -10,52 +10,42 @@ weight: 1
 
 ### Application of the CGM2.1
 
-This tutorial shows how you can apply the CGM2.1 on your motion capture data.
+
+This code shows how you can apply the CGM2.1 on your c3d trials.
 
 {{< notice "tip" >}}
   You can replicate the process on all CGM. Just check out the input arguments of the calibration and fitting operations
 {{< /notice >}}
 
 
-The code requires filename of your static acquisition and your gait trial which are both load as `btkAcquisition`
-it calls settings of the CGM2.1a and extract from them the different model options ( ie `left flat Foot` options).
-It calibrates the CGM2.1 from the static file,  then, applies the fitting operation on the gait trial to get kinematics and kinetics.
-Eventually, the code export outputs in a new c3d file suffixed with `-modelled.c3d`
-
-{{< notice "note" >}}
-  As you can see, the code calls the settings from the file `CGM2_1-pyCGM2.settings`. Unless your data folder does not contain this file, the code will load by default the file located in the `pyCGM2/Settings`
-{{< /notice >}}
-
-
-
 ```python
-
 # -*- coding: utf-8 -*-
-import pyCGM2; LOGGER = pyCGM2.LOGGER
 import os
-
 import pyCGM2
 from pyCGM2.Utils import files
 from pyCGM2.Tools import btkTools
 from pyCGM2.ForcePlates import forceplates
 from pyCGM2 import enums
-
 from pyCGM2.Lib.CGM import cgm2_1
 
+LOGGER = pyCGM2.LOGGER
 
+
+# data
 DATA_PATH = "C:\\myPATH\\"
-staticFile ="03367_05136_20200604-SBNNN-VDEF-02.c3d"
-trialName = "03367_05136_20200604-GBNNN-VDEF-01.c3d"
+staticFile ="03367_05136_20200604-SBNNN-VDEF-02.c3d" # static trial
+trialName = "03367_05136_20200604-GBNNN-VDEF-01.c3d" # gait trial
 
 
-# SETTINGS
+# setting
 settings = files.loadModelSettings(DATA_PATH,"CGM2_1-pyCGM2.settings")
 
-# CALIBRATION
+# CGM2.1 CALIBRATION
+#-------------------
 
-acqStatic = btkTools.smartReader(DATA_PATH+staticFile)
+acqStatic = btkTools.smartReader(DATA_PATH+staticFile) # construct the btk.Acquisition instance
 
-# calibration options
+# calibration options from settings
 leftFlatFoot = settings["Calibration"]["Left flat foot"]
 rightFlatFoot= settings["Calibration"]["Right flat foot"]
 headFlat= settings["Calibration"]["Head flat"]
@@ -64,7 +54,7 @@ markerDiameter = settings["Global"]["Marker diameter"]
 HJC = settings["Calibration"]["HJC"]
 pointSuffix = settings["Global"]["Point suffix"]
 
-# mp parameters
+# anthropometric parameters
 required_mp = dict()
 required_mp["Bodymass"] = 75.0
 required_mp["Height"]= 1750
@@ -96,7 +86,7 @@ optional_mp["RightTibialTorsion"]= 0
 optional_mp["RightThighRotation"]= 0
 optional_mp["RightShankRotation"]= 0
 
-
+# calibrate function
 model,finalAcqStatic,error = cgm2_1.calibrate(DATA_PATH,
     staticFile,
     translators,
@@ -109,16 +99,18 @@ model,finalAcqStatic,error = cgm2_1.calibrate(DATA_PATH,
     HJC,
     pointSuffix)
 
-# FITTING
+# CGM2.1 FITTING
+#----------------
 
-# fitting options
+# fitting options from settings
 momentProjection = enums.enumFromtext(settings["Fitting"]["Moment Projection"],enums.MomentProjection)
 pointSuffix = settings["Global"]["Point suffix"]
 
-
 # force plate assignement
-acq = btkTools.smartReader(DATA_PATH+trialName)
-mfpa = forceplates.matchingFootSideOnForceplate(acq)
+acq = btkTools.smartReader(DATA_PATH+trialName) # btk.Acquisition instance
+mfpa = forceplates.matchingFootSideOnForceplate(acq) #detect correct foot contact with a force plate
+
+# fitting function
 
 acqGait,detectAnomaly = cgm2_1.fitting(model,DATA_PATH, trialName,
     translators,
@@ -126,9 +118,25 @@ acqGait,detectAnomaly = cgm2_1.fitting(model,DATA_PATH, trialName,
     pointSuffix,
     mfpa,
     momentProjection,
-    frameInit= None, frameEnd= None )
+    frameInit= None, frameEnd= None )# acqGait updated with CGM2.1 ouputs ( kinematics and kinetics)
 
 # EXPORT
-btkTools.smartWriter(acqGait, DATA_PATH+trialName[:-4]+"-modelled.c3d")
+# -------
+btkTools.smartWriter(acqGait, DATA_PATH+trialName[:-4]+"-modelled.c3d") # save the btk.Acquisition instance as a new c3d with the suffix "-modelled"
 
 ```
+
+Briefly, the code above,
+
+ 1. constructs `btk.Acquisition` instances from your static and gait trial c3d files.
+ 2. calls settings of the CGM2.1 and extract from them the  model options ( eg `left flat Foot` options).
+ 3. loads the required anthropometric data
+ 4. calibrates the CGM2.1
+ 5. applies the fitting operation on the gait trial to get kinematics and kinetics.
+
+Eventually, the code exports CGM2.1 outputs in a new c3d file suffixed with `-modelled.c3d`
+
+{{< notice "note" >}}
+  As you can see, the code calls the settings from the file `CGM2_1-pyCGM2.settings`. Unless your data folder does not contain this file,
+  the code will load by default the file located in the folder `pyCGM2/Settings/CGM2_1-pyCGM2.settings`
+{{< /notice >}}

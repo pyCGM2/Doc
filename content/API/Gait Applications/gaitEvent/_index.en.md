@@ -9,14 +9,11 @@ weight: 3
 ---
 
 
-This tutorial is short. Currently, only the kinematic-based event detector stated by Zeni et al, was implemented
+Currently, only the kinematic-based event detector stated by Zeni et al, was implemented
 
 {{< notice "info" >}}
   Contributions are welcome
 {{< /notice >}}
-
-
-You just need to load a `BtkAcquisition` from your gait trial. then, run the function `Zeni` from the file `eventDetector` of  the module `Lib`
 
 
 ```python
@@ -26,9 +23,14 @@ from pyCGM2.Tools import btkTools
 
 DATA_PATH = "C:\\myPATH\\"
 
+# data
 trialName = "03367_05136_20200604-GBNNN-VDEF-01.c3d"
 acqGait = btkTools.smartReader(DATA_PATH+trialName)
+
+# function
 eventDetector.zeni(acqGait)
 btkTools.smartWriter(acqGait, DATA_PATH+trialName[:-4]+"-event.c3d")
 
 ```
+
+just load your trial name as a btk.Acquisition instance then  run the function `Zeni` from the  `eventDetector` module
