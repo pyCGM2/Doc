@@ -16,7 +16,7 @@ weight: 2
 
 <hr>
 
-* download the last pycgm2 release ( [version 4.1.0](https://github.com/pyCGM2/pyCGM2/releases/tag/version(4.1.0))) or the pycgm2 pre-release ( [version 4.2.0-beta](https://github.com/pyCGM2/pyCGM2/releases/tag/version(4.2.0-beta)))
+* download the last pycgm2 release ( [version 4.1.0](https://github.com/pyCGM2/pyCGM2/releases/tag/version(4.2.0)))
 
 * go to you local downloaded zip file and unzipped it ( place it wherever)
 * open the *miniconda prompt*

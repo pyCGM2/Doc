@@ -10,11 +10,14 @@ We value your feedback : Submit your suggestions for improvements
 {{< /notice >}}
 
 
-###  BETA pyCGM2 4.2.0 - [june, 2021]
+## pyCGM2 4.2.0 - Documentation - [may 2022]
 
 {{< changelog "Added" >}}
-  * documentation API generator.  Google style doctrings are parsed and rendered as markdown.
-  * new folder *examples**  with basic scripts.
+
+* Documentation API generated with sphinx (available at [readthedoc website](https://pycgm2.readthedocs.io/en/latest/))
+* restructuration module. Procedures and filters  in distinct modules
+* management of the **param** c3d section.
+* classification filter for classify gait according the Plantar-flexor - knee extension value.     
 {{</ changelog >}}
 
 {{< changelog "Changed" >}}
@@ -22,12 +25,17 @@ We value your feedback : Submit your suggestions for improvements
   * installation  do not copy  settings into the folder *c:/programData/pycgm2/*. Default settings are called from the *settings* folder of your installed pyCGM2 package     
   * better management of the settings file (emg.settings and CGMi-pycgm2.settings).  `Utils.files.loadModelSettings` looks for a cgm settings file in your data folder if not found. it loads the default cgm settings.  
   *  emg processing functions improved. better management of the emg.settings through a  new class `EMG.EmgManager`  
-
  {{</ changelog >}}
 
 {{< changelog "Fixed" >}}
-  * wrong settings  are called if you have several virtual environment
-{{</ changelog >}}
+
+* **vicon CGM1.1 calibration  app** fixed ( wrong argument name)
+* **Vicon apps** for plotting comparison does not fail anymore from 2 eclipse marked nodes
+* wrong settings  are called if you have several virtual environments
+* wrong axis calculation - Naaim's knee varus valugus correction method fixed
+ {{</ changelog >}}
+
+
 
 ###  pyCGM2 4.1.0 - Phantoms- [april, 2021]
 
