@@ -14,7 +14,7 @@ We value your feedback : Submit your suggestions for improvements
 
 {{< changelog "Added" >}}
 
-* Documentation API generated with sphinx (available at [readthedoc website](https://pycgm2.readthedocs.io/en/latest/))
+* Documentation API generated with sphinx (available at [readthedoc website](https://pycgm2.readthedocs.io/en/version4.2.0/))
 * restructuration module. Procedures and filters  in distinct modules
 * management of the **param** c3d section.
 * classification filter for classify gait according the Plantar-flexor - knee extension value.     
