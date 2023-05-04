@@ -667,7 +667,7 @@ pre {
   background: #FAE2E2; }
 
 .content .notices.warning p::after {
-  content: 'Warning';
+  content: 'Warning2';
   position: absolute;
   top: 2px;
   color: #fff;

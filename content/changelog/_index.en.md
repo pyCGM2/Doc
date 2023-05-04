@@ -5,10 +5,51 @@ draft: false
 ---
 
 {{< notice "info" >}}
-Please use the issue tracker of github to post your issue </br>
-We value your feedback : Submit your suggestions for improvements
+  Use the contact form to suggest improvements
 {{< /notice >}}
 
+
+## pyCGM2 4.3.0-rc2 - Documentation - [april 2023] -one command to rule them all 
+
+{{< changelog "Added" >}}
+
+* creation of a [conda package](https://anaconda.org/pyCGM2/pycgm2)
+* creation of [shared conda environments](https://anaconda.org/pyCGM2/environments) 
+* package compatible for python 3.7 to 3.9 
+* compatibility with opensim 4.4
+* A single command line  `pyCGM2.exe` to control all Nexus, Qtm apps
+* Computation of the L(R)GroundReactionForce +  creation of a new model ouputs L(R)StanGroundReactionForce standardising the ground reaction force for clinical description
+(X: forward/backward Y: Lateral/medial Z: Upward/downward)
+* new variables ("LTHIplanarAngle", "RTHIplanarAngle","LTIBplanarAngle", "RTIBplanarAngle") fro CGM1 to 2.1 returning the planar angles between the proximal joint (e.g. LHJC)
+the lateral joint marker(e.g. LKNE) and the lateral marker (e.g LTHI). (Reference Leboeuf, F.; Sangeux, M. (2022) Wand-mounted lateral markers are less prone to soft-tissue artefacts than skin-mounted markers when using the conventional gait model. In : Gait & posture. DOI: 10.1016/j.gaitpost.2022.12.013.)
+* interaction with the **param** c3d section.
+* implementation of the Plantar-flexor - knee extension index (Sangeux, Morgan; Rodda, Jill; Graham, H. Kerr (2015) Sagittal gait patterns in cerebral palsy: the plantarflexor-knee extension couple index. In : Gait & posture, vol. 41, n° 2, p. 586–591. DOI: 10.1016/j.gaitpost.2014.12.019. ). 
+* implementation of Sangeux et al, 2015. (Sangeux, Morgan; Polak, Julia (2015) A simple method to choose the most representative stride and detect outliers. In : Gait & posture, vol. 41, n° 2, p. 726–730. DOI: 10.1016/j.gaitpost.2014.12.004)
+* new interface with opensim 4.4
+* **experimental** implementation of the kalman opensim inverse kinematic solder
+* **experimental** computation of the muscle lenght for CGM2.2 and 2.3
+* **experimental** enable use of custom anthropometric parameters.
+* **experimental** integration of Blue trident btk reader and basic IMU calculation
+* **experimental** possibility to use Nexus Commamds in offline mode
+
+{{</ changelog >}}
+
+{{< changelog "Changed" >}}
+* processing module reorganised. Procedures and filters in distinct submodules
+ {{</ changelog >}}
+
+{{< changelog "Fixed" >}}
+* SARA and Calibration2Dof fixed for working with the lower limb model
+* tibial torsion now updated with the CGM1 presenting  medial ankle markers.
+* [nexus] new script argument `forceMP` to force the use of anthropometric parameter offset 
+* export of the gvs scores enable
+* fix issue with  settings if you have several virtual environments
+* wrong axis used in Naaim's knee varus valugus correction  
+
+ {{</ changelog >}}
+
+
+ 
 
 ## pyCGM2 4.2.0 - Documentation - [may 2022]
 

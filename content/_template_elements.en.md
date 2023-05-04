@@ -35,6 +35,10 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 [abs]({{< ref "CGM/CGM1.0" >}})
 [rel]({{< relref "CGM/CGM1.0" >}})
 
+
+[example with title]({{< relref "../Plots#emg-plot" >}})
+
+
 [I'm an inline-style link](https://www.google.com)
 
 [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
@@ -98,6 +102,18 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime 
 {{< notice "info" >}}
   This is a simple info.
 {{< /notice >}}
+
+{{< notice "warning" >}}
+  This is a simple info.
+{{< /notice >}}
+
+
+<div class="container">
+  <div class="alert alert-info" role="alert">
+    Note `environment_37.yml` or `environment_38.yml` generates Python 3.7 (resp. 3.8) virtual environments named pycgm37 (resp. pycgm38)
+  </div>
+</div>
+
 
 <hr>
 
@@ -234,3 +250,8 @@ Markdown | Less | Pretty
 
 {{< changelog "Unreleased" >}}
 {{</ changelog >}}
+
+
+### elements from bootwatch
+
+<p class="text-danger">Notice the Calibration process, do not accept gap. Please crop or fill gaps of your trial</p>
