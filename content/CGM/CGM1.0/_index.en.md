@@ -31,7 +31,7 @@ There is  no equivalent marker of RBAK on the left side. This optional marker he
 {{< /notice >}}
 
 
-Check out our [palpation guidelines](Palpation.html) for getting assistance on marker placement.
+Check out our [palpation guidelines]({{< ref "Ressources/Palpation" >}}) for getting assistance on marker placement.
 
 ### Anthropometric parameters
 

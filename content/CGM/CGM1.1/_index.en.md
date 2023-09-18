@@ -24,7 +24,7 @@ An  *optional marker* is used for improving the tracking-labelling process. They
 There is  no equivalent marker of RBAK on the left side. This optional marker help the autolabelling at detecting the left from the right side.
 {{< /notice >}}
 
-Check out our [palpation guidelines](Palpation.html) for get assistance on marker placement
+Check out our [palpation guidelines]({{< ref "Ressources/Palpation" >}})  for get assistance on marker placement
 
 
 {{< notice "info" >}}
