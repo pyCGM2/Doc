@@ -7,7 +7,7 @@ description: ""
 weight: 6
 ---
 
-### Change default CGM settings temporarly
+## 1. Change default CGM settings temporarly
 
 Both *calibration* and *fitting* commands (e.g `pycgm2.exe NEXUS CGM1.0 Calibration` and ( resp `pycgm2.exe NEXUS CGM1.0 Fitting`))) 
 called default settings, you can alter with   [input arguments]({{< relref "../argumentReferences" >}})
@@ -43,7 +43,7 @@ The local CGM setting file, rather the default settings, will be loaded each tim
 {{< /notice >}} 
 
 
-## Modify the default EMG configuration
+## 2. Modify the default EMG configuration
 
 We predefined the position of 16 emg devices as follow
 
@@ -95,3 +95,41 @@ CHANNELS:
   </br>
   Find and ammend the `emg.settings` file , located in the folder *Settings** of your pyCGM2 folder( *C:/Users/username/Miniconda3/envs/yourVirtualEnvironment/Lib/site-packages/pyCGM2*) and edit it 
 {{< /notice >}} 
+
+
+## 3. Integrate an pyCGM2 command as operation of a nexus pipeline
+
+{{< notice "note" >}}
+  As you could see below, all commands  were configured to work with the virtual python 3.9 environnent, named `pycgm39`
+{{< /notice >}}
+
+To integrate a pyCGM2 operation into a Vicon nexus pipeline, you need to insert a *run python operation* into your pipeline and configure it as follow :
+
+![nexusOp](Nexus_pipelineOpSettings.png)
+
+
+ * **the python script file** must target :  `yourMinicondapath/Miniconda3/envs/pycgm39/Scripts/pyCGM2-script.py`
+ * place the input arguments in the **script arguments** text box. 
+ In this example, we want to calibrate our static trial with the CGM1.0
+ * In **Environment activation**, you need to place the bat file that activate your virtual python environment -( here `pycgm39`).
+   * create a new file named `environementActivation.bat` and edit it with a text editor (notepad)
+   * place into the file, the following content   
+    ```bash
+    @echo off
+    
+    rem Set the path to your Miniconda installation directory
+    set "CONDA_PATH=C:\Users\fleboeuf\Miniconda3"
+    
+    rem Set the name of your virtual environment
+    set "ENV_NAME=pycgm39"
+    
+    call "%CONDA_PATH%\Scripts\activate.bat" %ENV_NAME%
+    ```
+    * edit `CONDA_PATH` to the folder containg the command `conda.exe` and et the appropriate virtual environment name `ENV_NAME`
+    * save your file. 
+
+{{< notice "tip" >}} 
+  For those who instal pyCGM2 from local source, you can find a preconfigured file `environementActivation.bat`
+  in the folder `pyCGM2\Apps\ViconApps` 
+{{< /notice >}}
+

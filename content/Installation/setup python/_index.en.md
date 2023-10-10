@@ -8,7 +8,7 @@ weight: 1
 ---
 
 {{< notice "info" >}}
-  pyCGM2 is implemented for **python 3.7 to python 3.9** under **Microsoft Windows 10**.
+  pyCGM2 is implemented for **python 3.7 to python 3.11**. installation was tested for **Microsoft Windows 10**.
 {{< /notice >}}
 
 
@@ -18,29 +18,14 @@ First, we recommand to install the **Miniconda** python distribution.  Then, **o
 ## Miniconda installation
 
 * go to miniconda [download page](https://docs.conda.io/en/latest/miniconda.html)
-* download one of the last 64 bits windows python 3.7,3.8 or 3.9 version ( not over 3.9 )
+* download one of the last 64 bits windows python 3
 ![miniconda](miniconda-installation.jpg)
 
 * run the downloaded file and follow installation with default argument.  
 
 Once installed, You will see **the Anaconda-64 bits** in you start menu. This directory contains the **anaconda prompt (miniconda)** which will be use to run our python script.
 
-
 ![minicondaConsole](anacondaConsole.png)
-
-
-
-## **[Optional]** Create a python virtual environnement 
-
-<hr>
-
-* open the **anaconda prompt (miniconda)**
-* type `conda create --name pycgm39 python=3.9`.  This commands create a virtual environment named *pycgm39*.
-* type `activate pycgm39` to enable your environment
-
-Here is a video, that describe how to create a virtual python 3.7 environement named  `pycgm3`. 
-
-{{< youtube 86s2rN76ieU >}}
 
 
 ## some python readings 

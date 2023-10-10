@@ -7,58 +7,52 @@ description: ""
 weight: 2
 ---
 
-
-The easiest option to install pyCGM2 is to pull the [pyCGM2 conda package](https://anaconda.org/pyCGM2/pycgm2)
-
-Beforehand, we recommand to create a virtual python environment to isolate your pycgm2 project from other projects and applications on your system.
-
-* open the **anaconda prompt (miniconda)**
-* type `conda create --name pycgm39 python=3.9`. 
-* type `activate pycgm39` to activate your environment
-
-Then, pull the pycgm2 conda package with the command   
-
-* `conda install -c pycgm2 pycgm2` 
-
-The last command install the latests pycgm2 version (ie version 4.3.0) an all its dependancies in your PC. 
-
 {{< notice "info" >}}
-  Instead of python 3.9, you can use the same commands for python 3.7 and 3.8
+  pyCGM2 is implemented for **python 3.7 to python 3.11**. installation was tested for **Microsoft Windows 10**.
 {{< /notice >}}
 
-## Alternative installation
+<center>
+<figure>
+{{< mermaid align="left" theme="neutral" >}}
+flowchart LR
+    A[Install PYCGM2] -->|nexus User| B(install Nexus API)
+{{< /mermaid >}}
+<figcaption>installation flowchart</figcaption>
+</figure>
+</center>
+
+### stage 1 :  install pyCGM2
 
 
-If you encounter any problems with the conda package or are a developer who wants to work on pyCGM2 API, there is an alternative installation method that you can use 
+Launch the **anaconda prompt (miniconda)**, then, for python 3.9, type the commands :
+
+```bash
+conda create --name pycgm39 python=3.9
+conda activate pycgm39
+conda install -c pycgm2 pycgm2
+```
+If you're using a different version of Python (e.g., 3.10), adjust the commands accordingly. For instance, replace python=3.9 with python=3.10 and update the virtual environment name to pycgm310.
+
+**explanations** The first two commands create and enable the python 3.9 virtual environment named `pycgm39`
+and the last command install pyCGM2 from its [conda channel](https://anaconda.org/pyCGM2) 
+
+{{< notice "info" >}}
+If either you simply want to access the pyCGM2 executables, or you are not a python developper, you can skip the creation and activation of the virtual environement. Just ensure you have an Anaconda versions 3.7 to 3.11 installed on your system and run the last command
+{{< /notice >}}
 
 
-First, you need to download the pyCGM2 source code on your laptop. you have different options
+### stage 2 : For vicon user -  install the Nexus API
 
- * download  [pyCGM2 4.3rc2]( https://github.com/pyCGM2/pyCGM2/releases/tag/4.3-rc2) , then unzipping it 
-or
- * clone the github [master branch](https://github.com/pyCGM2/pyCGM2) with your subversion software (github desktop, sourceTree, ...)
+If you are a **Vicon Nexus User**, type the command below to enable interaction with Vicon Nexus
 
-then : 
-
- * open the **anaconda prompt (miniconda)**
- * navigate  to the local pycgm2 folder with the command  `cd C:/PATH/TO/PYCGM2/`
- * type : `conda env create -f environment_39.yml`. This command creates a  python 3.9 virtual environment named `pycgm39` with all pyCGM2 dependancies. 
-
-<div class="container">
-  <div class="alert alert-info" role="alert">
-    Note `environment_37.yml` or `environment_38.yml` generates Python 3.7 (resp. 3.8) virtual environments named pycgm37 (resp. pycgm38)
-  </div>
-</div>
-
- * type `activate pycgm39` 
-
-if you are a developper or want to keep up-to-date with any modifications of the source code 
- * type `pip install -e .` ( do not forget the dot). 
-  This command will create a symbolic link in the site-packages folder that points to your local pyCGM2 folder.   
-
-Alternatively, if you only want to install pyCGM2 and not modify the source code
-
- * type `pip install .` ( do not forget the dot). 
-  This command will install pyCGM2 into the *site-package* folder of your virtual python environement ( i.e. *C:\Users\fleboeuf\Miniconda3\envs\pycgm39\Lib\site-packages*). Once the installation is complete, you can safely remove the downloaded pyCGM2 folder.
+```bash
+cd C:\Program Files\Vicon\Nexus2.15\SDK\Win64\Python
+install_vicon_nexus_api.bat
+install_vicon_nexus_utils.bat
+```
+*note:* 
+ 
+ * this commands may require to be run in **administrator mode**
+ * installer only tested for nexus 2.15
 
 

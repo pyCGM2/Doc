@@ -37,7 +37,7 @@ First, you'll need to make sure that you have Python installed on your computer.
 
 
 {{< notice "warning" >}}
-notice pyCGM2 is only compatible with python 3.7 to 3.9.
+notice pyCGM2 is only compatible with python 3.7 to 3.11. Installation was tested for windows only
 {{< /notice >}}
 
 
