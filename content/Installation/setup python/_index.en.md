@@ -30,7 +30,6 @@ Once installed, You will see **the Anaconda-64 bits** in you start menu. This di
 
 ## some python readings 
 
- * [why-you-should-use-a-virtual-environment](https://towardsdatascience.com/why-you-should-use-a-virtual-environment-for-every-python-project-c17dab3b0fd0) for every python project
  * [learning python for biomechanics](https://kineticstoolkit.uqam.ca/doc/python_for_beginners.html) written by Felix Chenier (UQAM, Montréal)
 
 

@@ -11,6 +11,29 @@ All available Nexus apps can be displayed with the command
 
 `pycgm2.exe QTM -h`
 
+## Quickstart
+
+Check out this video to see how to run the CGM2.1 QTM workflow 
+
+
+{{< youtube b0v1RopkNB4 >}}
+
+
+Here are the subsequent steps described in the video :
+  * open Qtm and load your project
+  * generate the   `session.xml` file, 
+  * open anaconda prompt console 
+  * (optional) activate your python environment  `activate pycgm39` ( here i activate the python 3.9 version of pycgm2)
+  * Go to your data folder in the console with the current directory command `cd` 
+  * run `pyCGM2.exe QTM CGM2.1`
+  
+
+The section  [Vicon apps]({{< relref "Qtm Apps" >}})  presents the different scripts callable from the command `pyCGM2.exe QTM`
+
+
+
+## Commands
+
 you will see, we propose QTM workflows for each CGM
 ![QtmCommands](QtmCommands.jpg)
 

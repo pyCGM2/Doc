@@ -6,18 +6,55 @@ description: ""
 # type dont remove or customize
 weight: 6
 ---
+## Integrate an pyCGM2 command as operation of a nexus pipeline
 
-## 1. Change default CGM settings temporarly
+{{< notice "info" >}}
+Before running any commands, be sure your virtual python environment is activated. Type `activate pycgm39`
+{{< /notice >}}
+
+To integrate a pyCGM2 operation into a Vicon nexus pipeline, you need to insert a *run python operation* into your pipeline and configure it as follow :
+
+![nexusOp](Nexus_pipelineOpSettings.png)
+
+ * switch to `advanced mode`
+ * **the python script file** must target :  `CONDA_PATH/envs/pycgm39/Scripts/pyCGM2-script.py`
+ * place the input arguments in the **script arguments** text box. 
+ In this example, we want to calibrate our static trial with the CGM1.0
+ * In **Environment activation**, you need to place the bat file that activate your virtual python environment -( here `pycgm39`).
+   * create a new file named `environmentActivation.bat` and edit it with a text editor (e.g. notepad)
+   * place into the file, the following content   
+    ```bash
+    @echo off
+    
+    rem Set the path to your Miniconda installation directory
+    set "CONDA_PATH=C:\Users\fleboeuf\Miniconda3"
+    
+    rem Set the name of your virtual environment
+    set "ENV_NAME=pycgm39"
+    
+    call "%CONDA_PATH%\Scripts\activate.bat" %ENV_NAME%
+    ```
+    * edit `CONDA_PATH`  and  the appropriate virtual environment name `ENV_NAME`
+    * save your file. 
+
+{{< notice "tip" >}} 
+  if you do not know where is *CONDA_PATH*, open a conda console and type `conda info`
+{{< /notice >}}
+
+## Change default CGM settings temporarly
+
+
+Default settings are configured in the folder: *CONDA_PATH/envs/ENV_NAME/Lib/site-packages/pyCGM2/Settings*
 
 Both *calibration* and *fitting* commands (e.g `pycgm2.exe NEXUS CGM1.0 Calibration` and ( resp `pycgm2.exe NEXUS CGM1.0 Fitting`))) 
-called default settings, you can alter with   [input arguments]({{< relref "../argumentReferences" >}})
+called default settings, you can alter with  [input arguments]({{< relref "../argumentReferences" >}})
 
-An alternative to input arguments is to place a CGM settings file (e.g [`CGM2_3-pyCGM2.settings` for the CGM2.3) in the data folder. we dedicated a commmand to do that. 
+An alternative is to place a CGM settings file (e.g [`CGM2_3-pyCGM2.settings` for the CGM2.3) l into the data folder. 
+Do it manually or through a command : 
 
  * open a miniconda prompt
- * activate your python virtual environment `activate pycgm39`
- * change your current dicectory to target the data folder
- * run the command `pyCGM2.exe GLOBAL LocalSettings -m CGM2.3` or `pyCGM2.exe GLOBAL LocalSettings --model CGM2.3` fro the CGM2.3
+ * change your current directory to target the data folder
+ * run the command `pycgm2.exe SETTINGS Edit -m CGM2.3` or `pycgm2.exe SETTINGS Edit --model CGM2.3` fro the CGM2.3
 
 The command will place the `CGM2_3-pyCGM2.settings` file into your data folder so you can amend it. 
 
@@ -33,19 +70,18 @@ Calibration:
     Head flat : 0
 ```
 
-The local CGM setting file, rather the default settings, will be loaded each time you run the *calibration* and *fitting* CGM commands 
-
-
 {{< notice "warning" >}}
-  You can also **permanantly** alter the CGM settings. 
+  You can also **permanantly** alter the default CGM settings. 
   </br>
-  Find and ammend the `CGM2_3-pyCGM2.settings` or another one, located in the folder *Settings** of your pyCGM2 folder( *C:/Users/username/Miniconda3/envs/yourVirtualEnvironment/Lib/site-packages/pyCGM2*) 
+  Find and ammend the `CGM2_3-pyCGM2.settings` 
 {{< /notice >}} 
 
 
-## 2. Modify the default EMG configuration
+## Modify the default EMG configuration
 
-We predefined the position of 16 emg devices as follow
+Default EMG settings are configured in the file: *CONDA_PATH/envs/ENV_NAME/Lib/site-packages/pyCGM2/Settings/emg.settings*
+
+We predefined the location of 16 emg devices as follow
 
 | EMG channel   | Muscle            | Side    |
 |:-------------:|:-----------------:|:-------:|
@@ -66,12 +102,12 @@ We predefined the position of 16 emg devices as follow
 | EMG15         | None              | None    |
 | EMG16         | None              | None    |  
 
-If your session does not match with this configuration, you can place the  `emg.settings` file into your data folder, then amend it
+If your session does not match with this configuration, you can place the  `emg.settings` file into your data folder, then amend it.
 
+Do it manually or through the command
  * open a miniconda prompt
- * activate your python virtual environment `activate pycgm39`
- * change your current dicectory to target the data folder
- * run the command `pyCGM2.exe GLOBAL LocalSettings -e ` or `pyCGM2.exe GLOBAL LocalSettings --emg `
+ * change your current directory to target the data folder
+ * run the command `pycgm2.exe SETTINGS Edit -e ` or `pycgm2.exe SETTINGS Edit --emg `
 
 
 For instance, if your emg 1 and 2 are placed on the gluteus medius rather than the rectus femoris, open the `emg.settings` and edit the section
@@ -93,43 +129,8 @@ CHANNELS:
 {{< notice "warning" >}}
   You can also **permanantly** alter the emg settings. 
   </br>
-  Find and ammend the `emg.settings` file , located in the folder *Settings** of your pyCGM2 folder( *C:/Users/username/Miniconda3/envs/yourVirtualEnvironment/Lib/site-packages/pyCGM2*) and edit it 
+  Find and ammend the `emg.settings` file
 {{< /notice >}} 
 
 
-## 3. Integrate an pyCGM2 command as operation of a nexus pipeline
-
-{{< notice "note" >}}
-  As you could see below, all commands  were configured to work with the virtual python 3.9 environnent, named `pycgm39`
-{{< /notice >}}
-
-To integrate a pyCGM2 operation into a Vicon nexus pipeline, you need to insert a *run python operation* into your pipeline and configure it as follow :
-
-![nexusOp](Nexus_pipelineOpSettings.png)
-
-
- * **the python script file** must target :  `yourMinicondapath/Miniconda3/envs/pycgm39/Scripts/pyCGM2-script.py`
- * place the input arguments in the **script arguments** text box. 
- In this example, we want to calibrate our static trial with the CGM1.0
- * In **Environment activation**, you need to place the bat file that activate your virtual python environment -( here `pycgm39`).
-   * create a new file named `environementActivation.bat` and edit it with a text editor (notepad)
-   * place into the file, the following content   
-    ```bash
-    @echo off
-    
-    rem Set the path to your Miniconda installation directory
-    set "CONDA_PATH=C:\Users\fleboeuf\Miniconda3"
-    
-    rem Set the name of your virtual environment
-    set "ENV_NAME=pycgm39"
-    
-    call "%CONDA_PATH%\Scripts\activate.bat" %ENV_NAME%
-    ```
-    * edit `CONDA_PATH` to the folder containg the command `conda.exe` and et the appropriate virtual environment name `ENV_NAME`
-    * save your file. 
-
-{{< notice "tip" >}} 
-  For those who instal pyCGM2 from local source, you can find a preconfigured file `environementActivation.bat`
-  in the folder `pyCGM2\Apps\ViconApps` 
-{{< /notice >}}
 

@@ -108,9 +108,13 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime 
 {{< /notice >}}
 
 
+
+#### Notice bootswacth
 <div class="container">
   <div class="alert alert-info" role="alert">
+    
     Note `environment_37.yml` or `environment_38.yml` generates Python 3.7 (resp. 3.8) virtual environments named pycgm37 (resp. pycgm38)
+  
   </div>
 </div>
 

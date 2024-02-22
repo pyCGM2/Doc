@@ -16,7 +16,7 @@ weight: 4
 
 ### SSL error
 
-#### with the conda command
+**with the conda command**
 
 You may face with **SSL ERROR** when you run `conda`. 
 
@@ -27,7 +27,7 @@ For `conda`  :
 * open the **miniconda prompt**
 * type  `conda config --set ssl_verify False`.   
 
-#### SSL error with the pip install command 
+**SSL error with the pip install command**
 
 Under a secure proxy, the command  `pip install .` may return an SSL warning. 
 
@@ -38,7 +38,7 @@ for instance:
  * type `pip install . --trusted-host pypi.org --trusted-host files.pythonhosted.org`
 
 
-### [Vicon nexus Users] Issues with 'viconnexusapi' or  'viconnexusutils'
+###  'viconnexusapi' installation failed
 
 {{< notice "warning" >}}
   Administrator rights might be necessary. Open the miniconda console in admin mode.      

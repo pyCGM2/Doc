@@ -8,7 +8,9 @@ weight: 2
 ---
 
 
-
+{{< notice "info" >}}
+Before running any commands, be sure your virtual python environment is activated. Type `activate pycgm39`
+{{< /notice >}}
 
 ## Gait event methods
 
@@ -21,10 +23,12 @@ weight: 2
 {{< /notice >}}
 
 
-* run Vicon nexus
-* open  *miniconda prompt*
-* activate your pycgm2 virtual environment (type  `activate pycgm39`)
-* load your gait trial 
-* type `pyCGM2.exe NEXUS Events Zeni`
+Load the gait Trial, then run the command
 
-Type  `pyCGM2.exe NEXUS Events Zeni -h`  to know the input arguments. . Refer to the [argument reference]({{< ref "argumentReferences" >}}) page for details. 
+  ```bash
+  pyCGM2.exe NEXUS Events Zeni
+  ```
+
+Add ` -h ` to know their input arguments or or refer to the [documentation API](https://pycgm2.github.io/pyCGM2/Apps/nexus.html#Zeni) 
+
+
