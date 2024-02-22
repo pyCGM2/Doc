@@ -11,17 +11,21 @@ weight: 7
 
 ### Workshops
 
-* Leboeuf F. (2019) The conventional Gait Model 2 Project. Annual Congress of the French Society of Biomechanics, Poitiers, France
-* Leboeuf F. (2019)
+* Leboeuf F. (2023) The conventional Gait Model 2 . Annual Congress of the French Society of Movement Analysis in Children and Adults (SOFAMEA), Nantes, France
+* Leboeuf F. (2019) The conventional Gait Model 2 Project. Annual Congress of the French Society of Biomechanics, Nantes, France
 * Leboeuf F. (2018) The conventional Gait Model 2 Project. Annual Congress of the Gait and Clinical Movement Analysis (GCMAS), Dallas, USA
 
 
 
 ### Articles
 
+Leboeuf, F.; Barre, A.; Aminian, K.; Sangeux, M. (2023) On the accuracy of the Conventional Gait Model: distinction between marker misplacement and soft tissue artefact errors. In : Journal of biomechanics, p. 111774. DOI: 10.1016/j.jbiomech.2023.111774.
+
 Leboeuf, F.; Sangeux, M. (2022) Wand-mounted lateral markers are less prone to soft-tissue artefacts than skin-mounted markers when using the conventional gait model. In : Gait & posture. DOI: 10.1016/j.gaitpost.2022.12.013.
 
 Fonseca, M.; Bergere, M.; Candido, J.; Leboeuf, F.; Dumas, R.; Armand, S. (2022) The Conventional Gait Model's sensitivity to lower-limb marker placement. In : Scientific reports, vol. 12, n° 1, p. 14207. DOI: 10.1038/s41598-022-18546-5.
+
+Fouasson-Chailloux, Alban; Leboeuf, Fabien; Maugars, Yves; Trossaert, Marc; Menu, Pierre; Rannou, François et al. (2022) Gait Alteration Due to Haemophilic Arthropathies in Patients with Moderate Haemophilia. In : International journal of environmental research and public health, vol. 19, n° 12. DOI: 10.3390/ijerph19127527.
 
 Leboeuf, F.; Reay, J.; Jones, R.; Sangeux, M. (2019) The effect on conventional gait model kinematics and kinetics of hip joint centre equations in adult healthy gait. In : Journal of biomechanics, vol. 87, p. 167–171. DOI: 10.1016/j.jbiomech.2019.02.010.
 

@@ -12,7 +12,7 @@ The next sections are dedicated to show how an analyst can use the pyCGM2 API ba
 Proposed code can be copy/paste into your favorite python IDE then run on your PC.  
 
 {{< notice "tip" >}}
-  The advanced analyst willing to deep into the API, can consult the [documentation API website](https://pycgm2.readthedocs.io/en/latest/)
+  The advanced analyst willing to deep into the API, can consult the [documentation API website](https://pycgm2.github.io/pyCGM2/)
 {{< /notice >}}
 
 
