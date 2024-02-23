@@ -102,7 +102,7 @@ We predefined the location of 16 emg devices.
 | EMG16         | None              | None    |
 
 {{< notice "tip" >}}
- Consult the [how to]({{< ref "howto" >}})  page if you want to modify this configuration. 
+ Consult the [FAQ]({{< ref "FAQ" >}})  page if you want to modify this configuration. 
 {{< /notice >}}
 
 

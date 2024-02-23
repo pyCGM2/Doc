@@ -141,6 +141,15 @@ flowchart LR
 
 Download or clone a [pyCGM2 QTM project](https://github.com/pyCGM2/qualisys_CGM2_workflow)
 
+Once install, you need to amend each bat file of the *template*  folder 
+* open the downloaded project folder in your file explorer
+* go to the folder **Template**
+* edit and change `CONDA_PATH` and ENV_NAME 
+
+{{< notice "tip" >}} 
+  if you do not know where is *CONDA_PATH*, open a conda console and type `conda info`
+{{< /notice >}}
+
 
 #### Configure_QTM
 

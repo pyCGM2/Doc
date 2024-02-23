@@ -1,18 +1,13 @@
 ---
-title: "Mostly Asked Questions"
-description: "this is meta description"
-draft: false
+title: "Frequently asked Questions"
+#date: 2018-12-28T11:02:05+06:00
+icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
+description: ""
+# type dont remove or customize
+type : "docs"
+weight: 7
 ---
 
-{{< faq "How to cite pyCGM2 ?" >}}
 
-If you use pyCGM2 for a gneral purpose, we would be grateful if you could cite it as follows:
-
-> Leboeuf, F.; Baker, R.; Barré, A.; Reay, J.; Jones, R.; Sangeux, M. (2019) The conventional gait model, an open-source implementation that reproduces the past but prepares for the future. In : Gait & posture, vol. 69, p. 235–241. DOI: 10.1016/j.gaitpost.2019.04.015.
-
-
-if you use the CGM2.1, please cite this paper:
-
-> Leboeuf, F.; Reay, J.; Jones, R.; Sangeux, M. (2019) The effect on conventional gait model kinematics and kinetics of hip joint centre equations in adult healthy gait. In : Journal of biomechanics, vol. 87, p. 167–171. DOI: 10.1016/j.jbiomech.2019.02.010.
-
-{{</ faq >}}
+ 
+This FAQ page is designed to answer your most common questions about our software. It provides quick, accessible solutions and information to help you navigate and use the library with ease.

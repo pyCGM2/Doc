@@ -259,3 +259,33 @@ Markdown | Less | Pretty
 ### elements from bootwatch
 
 <p class="text-danger">Notice the Calibration process, do not accept gap. Please crop or fill gaps of your trial</p>
+
+
+<p class="text-primary">.text-primary</p>
+
+<p class="text-secondary">.text-secondary</p>
+
+<p class="text-success">.text-success</p>
+
+<p class="text-danger">.text-danger</p>
+
+<p class="text-warning bg-dark">.text-warning</p>
+
+<p class="text-info bg-dark">.text-info</p>
+
+<p class="text-light bg-dark">.text-light</p>
+
+<p class="text-dark">.text-dark</p>
+
+<p class="text-body">.text-body</p>
+
+<p class="text-muted">.text-muted</p>
+
+<p class="text-white bg-dark">.text-white</p>
+
+
+<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <h4 class="alert-heading">Warning!</h4>
+  <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+</div>

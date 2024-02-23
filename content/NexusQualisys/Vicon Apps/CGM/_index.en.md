@@ -89,7 +89,7 @@ pycgm2.exe NEXUS CGM2.5 Calibration
 
 **To alter these default settings** 
  * use input arguments to the command.  To know the input arguments, type  `pycgm2.exe NEXUS CGM1.0 Calibration -h ` ( or any CGM#i) or refer to the [documentation API](https://pycgm2.github.io/pyCGM2/Apps/nexus.html#CGM1.0)  
- * manipulate the setting files. see [how to]({{< ref "howto" >}})      
+ * manipulate the setting files. see [FAQ]({{< ref "FAQ" >}})      
 
 
 
@@ -123,7 +123,7 @@ you can replace `CGM1.0` with `CGM1.1`, `CGM2.1`, `CGM2.2`, `CGM2.3`, `CGM2.4` o
 **To alter these default settings** 
  * use input arguments to the command.  To know the input arguments, type  `pycgm2.exe NEXUS CGM1.0 Fitting -h ` (e.g for CGM1.0) 
    or refer to the [documentation API](https://pycgm2.github.io/pyCGM2/Apps/nexus.html#CGM1.0) 
- * manipulate the setting files. see [how to]({{< ref "howto" >}})     
+ * manipulate the setting files. see [FAQ]({{< ref "FAQ" >}})     
 
 
 ## CGM2.6 
