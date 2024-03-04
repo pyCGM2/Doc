@@ -23,7 +23,7 @@ type `activate pycgm39`
 
 Our script is an adaptation of the open-access code from [Burke and Lasenby 2016](https://www.sciencedirect.com/science/article/pii/S0021929016304766?via%3Dihub) (Burke and Lasenby 2016)   
 
-Find out  the [theory]({{< relref "theory" >}}) of this approach in the next section
+Find out  the [theory]({{< ref "blog/KalmanGapTheory" >}}) of this approach in the next section
 
 
 Load the gait trial, then run the command

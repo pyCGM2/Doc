@@ -6,7 +6,6 @@ description: "Estimating missing marker positions using low dimensional Kalman s
 Authors: Mickael Burke
 # type dont remove or customize
 weight: 1
-draft: True
 ---
 
 A wide range of motion capture gap filling algorithms have been developed and it can be challenging to decide which one is best for your study. This post provides a brief overview of [MoGapFill](https://www.sciencedirect.com/science/article/pii/S0021929016304766?via%3Dihub) (Burke and Lasenby 2016), and aims to provide users of this tool with some ideas around when it is best to apply it.
