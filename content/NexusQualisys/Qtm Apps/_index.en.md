@@ -34,6 +34,7 @@ flowchart LR
   generate[run *generate session*]
 
   subgraph events[Gait events]
+    direction LR
 
     subgraph manual[manual edition]
       direction TB
@@ -52,25 +53,44 @@ flowchart LR
       events25[*update Events* from pycgm2 menu]
     end
     events2--->events21--->events22--->events23--->events24--->events25
+
+    manual-- or ---zeni
+ 
+  end
+
+
+  subgraph cgmprocessing[CGM processing]
+
+    subgraph qtm[QTM start processing menu]
+      direction TB
+      modelling[run *CGM2 Modelling*]
+      processing[run *CGM2 Processing*]
+    
+      modelling--->processing
+    end
+
+
+    subgraph pyCGM2commands[use of a conda console]
+      direction TB
+      modelling2[pyCGM2.exe QTM Modelling]
+      processing2[pyCGM2.exe QTM Processing]
+    end
+
+    modelling2--->processing2
+    style modelling2 fill:#000000,stroke:#333,stroke-width:4px,color:#ffffff
+    style processing2 fill:#000000,stroke:#333,stroke-width:4px,color:#ffffff
+
+    qtm-- or ---pyCGM2commands
+  end
+
+  events--->cgmprocessing
+
+
   
-  end
-
-  subgraph qtm[QTM start processing menu]
-    modelling[run *CGM2 Modelling*]
-    processing[run *CGM2 Processing*]
-  end
-
-  subgraph pyCGM2commands[use of a conda console]
-    modelling2[pyCGM2.exe QTM Modelling]
-    processing2[pyCGM2.exe QTM Processing]
-  end
-  style modelling2 fill:#000000,stroke:#333,stroke-width:4px,color:#ffffff
-  style processing2 fill:#000000,stroke:#333,stroke-width:4px,color:#ffffff
 
 
 
-  generate--->events--->modelling--->processing
-  events--->modelling2--->processing2
+
 {{< /mermaid >}}
 </center>
 
