@@ -9,6 +9,44 @@ draft: false
 {{< /notice >}}
 
 
+## pyCGM2 4.3.1-rc3 - [february 2024] - Documentation Reborn 
+
+{{< changelog "Added" >}}
+
+  - Compatibility from python 3.7 to 3.11
+  - Implementation of the [Gloersen et al..](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152616)  gap filling method . (callable from pycgm2.exe) 
+  - Kalman kinematic fitting enable for CGM2.2
+  - Musculoskeletal model enable for CGM2.2
+  - Implementation of the Opensence IMU placer and opensense IMU kinematic fitter .
+  - Ground reaction force plots ( temporal, time-normalized , and comparison plots) callable from pycgm2.exe
+  - Joint moment comparison (callable from pycgm2.exe)
+
+ {{</ changelog >}}		
+
+{{< changelog "Changed" >}}
+
+  - New implementation of the IMU module 
+  - Code optimisation of cgm.py and cgm2.py  
+  - Api documentation with  the pydata sphynx theme- all methods coverage 
+  - Y axis limits modified if limits exceeded
+
+ {{</ changelog >}}	
+
+{{< changelog "Fixed" >}}
+
+  - Progression axis detection failded from sitting.  Remove detection from HEEL markers
+  - Fix issue for the  KAD + lateral shank scenario 
+  - CGM2.4 can now be run with missing markers
+
+ {{</ changelog >}}
+
+### issue - Feedbacks
+* Please use the issue tracker of github to post your issue 
+
+We value your feedback : Submit your suggestions for improvements to  fabien.leboeuf@gmail.com
+
+
+
 ## pyCGM2 4.3.0-rc2 - Documentation - [april 2023] -one command to rule them all 
 
 {{< changelog "Added" >}}
