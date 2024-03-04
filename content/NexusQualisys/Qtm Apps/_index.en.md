@@ -83,7 +83,7 @@ flowchart LR
     qtm-- or ---pyCGM2commands
   end
 
-  events--->cgmprocessing
+  generate--->events--->cgmprocessing
 
 
   
