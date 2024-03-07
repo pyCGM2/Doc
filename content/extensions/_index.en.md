@@ -29,6 +29,15 @@ The Force Plate Tests project focuses on the use of force platforms for the eval
 
 By utilizing pyCGM2, this project aims to precisely calculate various metrics characteristic of these movements, allowing a detailed analysis of performance and biomechanics of the subject.
 
+This image is the plot panel generared for a counter Movement jump
+
+
+<center>
+
+![cgm1ms](CMJ-plotExample.png)
+
+</center>
+
 ### Project: Wheelchair Tests
 
 In collaboration with [Maxence Gogendeau](https://www.linkedin.com/in/maxence-gogendeau-21080622a/), a student in  adapted physical activity at CHU de Nantes, the Wheelchair Tests project draws inspiration from the research of [Van der Slikke et al](https://www.researchgate.net/profile/Rienk-Van-Der-Slikke) to evaluate wheelchair movement. 
