@@ -25,7 +25,19 @@ Flow represents an extension of pyCGM2, designed to optimize the gait analysis p
 
 ### Project: Force Plate Tests
 
-The Force Plate Tests project focuses on the use of force platforms for the evaluation of specific movements, such as vertical jumps, drop jumps, and hop tests. 
+The Force Plate Tests project focuses on the use of force platforms for the evaluation of specific movements performed on force plates :
+
+ * standing
+ * squat
+ * counter movement jump
+ * squat jump
+ * abalakov jump
+ * single leg jump
+ * drop jump
+ * land and hold jump
+ * hop jump
+ * hop and return jump
+
 
 By utilizing pyCGM2, this project aims to precisely calculate various metrics characteristic of these movements, allowing a detailed analysis of performance and biomechanics of the subject.
 
