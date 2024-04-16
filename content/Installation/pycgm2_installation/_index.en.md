@@ -84,9 +84,9 @@ or
 Launch the **anaconda prompt (miniconda)**,  type the commands :
 
 ```bash
-conda activate activate pycgm39
+conda activate pycgm39
 cd C:/PATH/TO/YOUR/LOCAL/PYCGM2/FOLDER
-conda install btk
+conda install conda-forge::btk
 conda install -c opensim-org opensim
 pip install -e .
 ```
